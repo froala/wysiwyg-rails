@@ -16,4 +16,6 @@ Gem::Specification.new do |gem|
 
   gem.add_dependency "railties", ">= 3.2", "< 5.0"
   gem.add_dependency "font-awesome-rails", "= 4.0.3.1"
+
+  gem.add_development_dependency "activesupport"
 end

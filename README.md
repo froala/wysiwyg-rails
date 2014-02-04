@@ -1,4 +1,4 @@
-# wysiwyg-rails
+# wysiwyg-rails [![Gem Version](https://badge.fury.io/rb/wysiwyg-rails.png)](http://badge.fury.io/rb/wysiwyg-rails) [![Build Status](https://secure.travis-ci.org/stefanneculai/wysiwyg-rails.png)](http://travis-ci.org/stefanneculai/wysiwyg-rails)
 
 wysiwyg-rails provides the [Froala WYWIWYG Editor](http://editor.froala.com) javascript and stylesheets as a Rails engine for use with the asset pipeline.
 

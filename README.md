@@ -35,7 +35,7 @@ Congrats all is done!
 
 ## License
 
-the `wysiwyg-rails` project is MIT-LICENSE.
+The `wysiwyg-rails` project is MIT-LICENSE.
 
 You may use `Froala Editor` for non-commercial websites for free.
 

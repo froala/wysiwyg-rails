@@ -5,7 +5,7 @@ Gem::Specification.new do |gem|
   gem.authors       = ["stefan"]
   gem.email         = ["stefan.neculai@gmail.com"]
   gem.description   = "Integrate Froala WYSIWYG Editor into the Rails assets pipeline."
-  gem.summary       = ""
+  gem.summary       = "an asset gemification of the Froala WYSIWYG Editor library"
   gem.homepage      = "https://github.com/stefanneculai/wysiwyg-rails"
   gem.licenses      = ["MIT"]
 
@@ -16,6 +16,4 @@ Gem::Specification.new do |gem|
 
   gem.add_dependency "railties", ">= 3.2", "< 5.0"
   gem.add_dependency "font-awesome-rails", "= 4.0.3.1"
-
-  gem.add_development_dependency "activesupport"
 end

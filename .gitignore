@@ -9,3 +9,4 @@ gemfiles/vendor/ruby
 .rbenv-version
 .sass-cache
 .idea
+*~

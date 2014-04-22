@@ -18,7 +18,7 @@ In your `application.css`, include the css file:
 
 ```css
 /*
- *= require froala_editor.min.js
+ *= require froala_editor.min.css
  */
 ```
 

@@ -39,7 +39,7 @@ If you need to use any of the [Available Plugins][http://editor.froala.com/plugi
 ```javascript
 // Include other plugins.
 //= require plugins/block_styles.min.js
-//= require plugins/color.min.js
+//= require plugins/colors.min.js
 //= require plugins/media_manager.min.js
 //= require plugins/tables.min.js
 //= require plugins/video.min.js

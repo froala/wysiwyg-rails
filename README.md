@@ -38,14 +38,14 @@ In your `application.js`, include the js file:
 If you need to use any of the [Available Plugins][http://editor.froala.com/plugins], then you should include those too in your `application.js`.
 ```javascript
 // Include other plugins.
-//= require block_styles.min.js
-//= require color.min.js
-//= require media_manager.min.js
-//= require tables.min.js
-//= require video.min.js
-//= require fonts/fonts.min.js
-//= require fonts/font_family.min.js
-//= require fonts/font_size.min.js
+//= require plugins/block_styles.min.js
+//= require plugins/color.min.js
+//= require plugins/media_manager.min.js
+//= require plugins/tables.min.js
+//= require plugins/video.min.js
+//= require plugins/fonts/fonts.min.js
+//= require plugins/fonts/font_family.min.js
+//= require plugins/fonts/font_size.min.js
 ```
 
 Similar, if you want to use language translation you have to include the translation file.

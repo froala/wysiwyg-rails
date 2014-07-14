@@ -2,11 +2,11 @@
 require File.expand_path('../lib/wysiwyg-rails/version', __FILE__)
 
 Gem::Specification.new do |gem|
-  gem.authors       = ["stefan"]
-  gem.email         = ["stefan.neculai@gmail.com"]
+  gem.authors       = ["Froala"]
+  gem.email         = ["stefan@froala.com"]
   gem.description   = "A nice flat designed jQuery WYSIWYG editor based on HTML5."
   gem.summary       = "an asset gemification of the Froala WYSIWYG Editor library"
-  gem.homepage      = "https://github.com/stefanneculai/wysiwyg-rails"
+  gem.homepage      = "https://github.com/froala/wysiwyg-rails"
   gem.licenses      = ["MIT"]
 
   gem.files         = Dir["{app,lib}/**/*"] + ["LICENSE" ,"Rakefile", "README.md"]

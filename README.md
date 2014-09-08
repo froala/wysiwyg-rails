@@ -30,9 +30,6 @@ In your `application.js`, include the js file:
 //
 //= require froala_editor.min.js
 //
-// Include Beautify lib if needed.
-//= require libs/beautify/beautify-html.js
-//
 ```
 
 If you need to use any of the [Available Plugins][http://editor.froala.com/plugins], then you should include those too in your `application.js`.
@@ -43,9 +40,10 @@ If you need to use any of the [Available Plugins][http://editor.froala.com/plugi
 //= require plugins/media_manager.min.js
 //= require plugins/tables.min.js
 //= require plugins/video.min.js
-//= require plugins/fonts/fonts.min.js
-//= require plugins/fonts/font_family.min.js
-//= require plugins/fonts/font_size.min.js
+//= require plugins/font_family.min.js
+//= require plugins/font_size.min.js
+//= require plugins/file_upload.min.js
+//= require plugins/lists.min.js
 ```
 
 Similar, if you want to use language translation you have to include the translation file.

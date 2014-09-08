@@ -32,7 +32,7 @@ In your `application.js`, include the js file:
 //
 ```
 
-If you need to use any of the [Available Plugins][http://editor.froala.com/plugins], then you should include those too in your `application.js`.
+If you need to use any of the [Available Plugins](http://editor.froala.com/plugins), then you should include those too in your `application.js`.
 ```javascript
 // Include other plugins.
 //= require plugins/block_styles.min.js

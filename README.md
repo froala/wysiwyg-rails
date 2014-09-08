@@ -62,5 +62,5 @@ The `wysiwyg-rails` project is under MIT license.
 
 You may use the editor for non-commercial websites for free under the [Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License](http://creativecommons.org/licenses/by-nc-nd/4.0/).
 
-Froala Editor has [3 different licenses](http://editor.froala.com/download/) for commercial use.
+Froala Editor has [4 different licenses](http://editor.froala.com/download/) for commercial use.
 For details please see [License Agreement](http://editor.froala.com/license).

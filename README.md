@@ -20,6 +20,7 @@ In your `application.css`, include the css file:
 /*
  *= require froala_editor.min.css
  *= require froala_page.min.css
+ *= require font-awesome
  */
 ```
 

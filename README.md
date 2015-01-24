@@ -47,6 +47,9 @@ If you need to use any of the [Available Plugins](http://editor.froala.com/plugi
 //= require plugins/file_upload.min.js
 //= require plugins/lists.min.js
 //= require plugins/char_counter.min.js
+//= require plugins/fullscreen.min.js
+//= require plugins/urls.min.js
+//= require plugins/inline_styles.min.js
 ```
 
 Similar, if you want to use language translation you have to include the translation file.

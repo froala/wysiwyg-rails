@@ -67,5 +67,5 @@ Congrats all is done!
 
 The `wysiwyg-rails` project is under MIT license.
 
-Froala Editor has [4 different licenses](https://froala.com/wysiwyg-editor/pricing) for commercial use.
+Froala Editor has [3 different licenses](https://froala.com/wysiwyg-editor/pricing).
 For details please see [License Agreement](https://froala.com/wysiwyg-editor/terms).

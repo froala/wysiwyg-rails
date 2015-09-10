@@ -1,3 +1,5 @@
+require "font-awesome-rails"
+
 module WYSIWYG
   module Rails
     class Engine < ::Rails::Engine

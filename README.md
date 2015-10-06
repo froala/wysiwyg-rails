@@ -81,7 +81,7 @@ If you need to use any of the [Available Plugins](https://froala.com/wysiwyg-edi
 Similar, if you want to use language translation you have to include the translation file.
 ```javascript
 // Include Language if needed
-//= require langs/ro.js
+//= require languages/ro.js
 ```
 
 Then restart your web server if it was previously running.

@@ -6,12 +6,11 @@ module WYSIWYG
       initializer 'froala.assets.precompile', group: :all do |app|
         app.config.assets.precompile += %W(
           froala_editor.min.js
-          froala_editor_ie8.min.js
           plugins/*.js
-          langs/*.js
-          froala_content.min.css
+          languages/*.js
           froala_editor.min.css
           froala_style.min.css
+          plugins/*.css
           themes/*.css
         )
       end

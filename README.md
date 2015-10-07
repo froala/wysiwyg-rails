@@ -47,8 +47,8 @@ If you need to use any of the [Available Plugins](https://froala.com/wysiwyg-edi
 //= require plugins/font_family.min.js
 //= require plugins/font_size.min.js
 //= require plugins/fullscreen.min.js
-//= require plugins/image_manager.min.js
 //= require plugins/image.min.js
+//= require plugins/image_manager.min.js
 //= require plugins/inline_style.min.js
 //= require plugins/line_breaker.min.js
 //= require plugins/link.min.js

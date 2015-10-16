@@ -7,7 +7,7 @@ wysiwyg-rails provides the [Froala WYSIWYG HTML Editor](https://froala.com/wysiw
 Add this to your Gemfile:
 
 ```ruby
-gem "wysiwyg-rails"
+gem "wysiwyg-rails", "2.0.0.pre.rc.3"
 ```
 
 and run `bundle install`.

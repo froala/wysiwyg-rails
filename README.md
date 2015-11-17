@@ -7,12 +7,12 @@ wysiwyg-rails provides the [Froala WYSIWYG HTML Editor](https://froala.com/wysiw
 Add this to your Gemfile:
 
 ```ruby
-gem "wysiwyg-rails", "2.0.0.pre.rc.3"
+gem "wysiwyg-rails"
 ```
 
 and run `bundle install`.
 
-## Usage
+## Include in your assets
 
 In your `application.css`, include the css file:
 
@@ -87,7 +87,9 @@ Similar, if you want to use language translation you have to include the transla
 
 Then restart your web server if it was previously running.
 
-Congrats all is done!
+## Initialize Froala Editor
+
+Details about initializing the editor can be found in the [Froala WYSIWYG Editor official documentation](https://www.froala.com/wysiwyg-editor/docs).
 
 ## License
 

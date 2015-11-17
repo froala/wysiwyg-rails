@@ -34,11 +34,12 @@ In your `application.js`, include the JS file:
 //
 ```
 
-If you need to use any of the [Available Plugins](https://froala.com/wysiwyg-editor/v2.0/docs/plugins), then you should include those too in your `application.js` and `application.css`.
+If you need to use any of the [Available Plugins](https://froala.com/wysiwyg-editor/docs/plugins), then you should include those too in your `application.js` and `application.css`.
 ```javascript
 // Include other plugins.
 //= require plugins/align.min.js
 //= require plugins/char_counter.min.js
+//= require plugins/code_beautifier.min.js
 //= require plugins/code_view.min.js
 //= require plugins/colors.min.js
 //= require plugins/emoticons.min.js
@@ -90,7 +91,7 @@ Congrats all is done!
 
 ## License
 
-The `wysiwyg-rails` project is under MIT license.
+The `wysiwyg-rails` project is under MIT license. However, in order to use Froala WYSIWYG HTML Editor plugin you should purchase a license for it.
 
-Froala Editor has [3 different licenses](https://froala.com/wysiwyg-editor/v2.0/pricing).
-For details please see [License Agreement](https://froala.com/wysiwyg-editor/v2.0/terms).
+Froala Editor has [3 different licenses](https://froala.com/wysiwyg-editor/pricing).
+For details please see [License Agreement](https://froala.com/wysiwyg-editor/terms).

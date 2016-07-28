@@ -1,6 +1,6 @@
-# wysiwyg-rails [![Gem Version](https://badge.fury.io/rb/wysiwyg-rails.png)](http://badge.fury.io/rb/wysiwyg-rails) [![Build Status](https://secure.travis-ci.org/froala/wysiwyg-rails.png)](http://travis-ci.org/froala/wysiwyg-rails)
+# Rails Froala WYSIWYG HTML Editor [![Gem Version](https://badge.fury.io/rb/wysiwyg-rails.png)](http://badge.fury.io/rb/wysiwyg-rails) [![Build Status](https://secure.travis-ci.org/froala/wysiwyg-rails.png)](http://travis-ci.org/froala/wysiwyg-rails)
 
-wysiwyg-rails provides the [Froala WYSIWYG HTML Editor](https://froala.com/wysiwyg-editor) javascript and stylesheets as a Rails engine for use with the asset pipeline.
+>wysiwyg-rails provides the [Froala WYSIWYG HTML Editor](https://froala.com/wysiwyg-editor) javascript and stylesheets as a Rails engine for use with the asset pipeline.
 
 ## Installation
 
@@ -12,7 +12,7 @@ gem "wysiwyg-rails"
 
 and run `bundle install`.
 
-## Include in your assets
+## Include in assets
 
 In your `application.css`, include the css file:
 
@@ -35,6 +35,7 @@ In your `application.js`, include the JS file:
 ```
 
 If you need to use any of the [Available Plugins](https://froala.com/wysiwyg-editor/docs/plugins), then you should include those too in your `application.js` and `application.css`.
+
 ```javascript
 // Include other plugins.
 //= require plugins/align.min.js
@@ -82,6 +83,7 @@ If you need to use any of the [Available Plugins](https://froala.com/wysiwyg-edi
 ```
 
 Similar, if you want to use language translation you have to include the translation file.
+
 ```javascript
 // Include Language if needed
 //= require languages/ro.js
@@ -89,7 +91,7 @@ Similar, if you want to use language translation you have to include the transla
 
 Then restart your web server if it was previously running.
 
-## Initialize Froala Editor
+## Initialize Editor
 
 Details about initializing the editor can be found in the [Froala WYSIWYG Editor official documentation](https://www.froala.com/wysiwyg-editor/docs).
 

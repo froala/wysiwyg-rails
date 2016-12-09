@@ -49,6 +49,7 @@ If you need to use any of the [Available Plugins](https://froala.com/wysiwyg-edi
 //= require plugins/font_family.min.js
 //= require plugins/font_size.min.js
 //= require plugins/fullscreen.min.js
+//= require plugins/help.min.js
 //= require plugins/image.min.js
 //= require plugins/image_manager.min.js
 //= require plugins/inline_style.min.js
@@ -73,6 +74,7 @@ If you need to use any of the [Available Plugins](https://froala.com/wysiwyg-edi
  *= require plugins/emoticons.min.css
  *= require plugins/file.min.css
  *= require plugins/fullscreen.min.css
+ *= require plugins/help.min.css
  *= require plugins/image_manager.min.css
  *= require plugins/image.min.css
  *= require plugins/line_breaker.min.css

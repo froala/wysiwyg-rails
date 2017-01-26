@@ -88,7 +88,7 @@ If you need to use any of the [Available Plugins](https://froala.com/wysiwyg-edi
 
 Similar, if you want to use language translation you have to include the translation file.
 
-```javascript
+```coffeescript
 # Include Language if needed
 #= require languages/ro.js
 ```

@@ -18,9 +18,10 @@ In your `application.css`, include the css file:
 
 ```css
 /*
- *= require froala_editor.min.css
- *= require froala_style.min.css
- *= require font-awesome
+ @import "froala_editor.min.css";
+ @import "froala_style.min.css";
+ @import "font-awesome-sprockets";
+ @import "font-awesome";
  */
 ```
 
@@ -34,64 +35,62 @@ In your `application.js`, include the JS file:
 //
 ```
 
-If you need to use any of the [Available Plugins](https://froala.com/wysiwyg-editor/docs/plugins), then you should include those too in your `application.js` and `application.css`.
+If you need to use any of the [Available Plugins](https://froala.com/wysiwyg-editor/docs/plugins), then you should include those too in your `application.js.coffee` and `application.css.scss`.
 
 ```javascript
-// Include other plugins.
-//= require plugins/align.min.js
-//= require plugins/char_counter.min.js
-//= require plugins/code_beautifier.min.js
-//= require plugins/code_view.min.js
-//= require plugins/colors.min.js
-//= require plugins/emoticons.min.js
-//= require plugins/entities.min.js
-//= require plugins/file.min.js
-//= require plugins/font_family.min.js
-//= require plugins/font_size.min.js
-//= require plugins/fullscreen.min.js
-//= require plugins/help.min.js
-//= require plugins/image.min.js
-//= require plugins/image_manager.min.js
-//= require plugins/inline_style.min.js
-//= require plugins/line_breaker.min.js
-//= require plugins/link.min.js
-//= require plugins/lists.min.js
-//= require plugins/paragraph_format.min.js
-//= require plugins/paragraph_style.min.js
-//= require plugins/print.min.js
-//= require plugins/quick_insert.min.js
-//= require plugins/quote.min.js
-//= require plugins/save.min.js
-//= require plugins/table.min.js
-//= require plugins/special_characters.min.js
-//= require plugins/url.min.js
-//= require plugins/video.min.js
+# Include other plugins.
+#= require plugins/align.min.js
+#= require plugins/char_counter.min.js
+#= require plugins/code_beautifier.min.js
+#= require plugins/code_view.min.js
+#= require plugins/colors.min.js
+#= require plugins/emoticons.min.js
+#= require plugins/entities.min.js
+#= require plugins/file.min.js
+#= require plugins/font_family.min.js
+#= require plugins/font_size.min.js
+#= require plugins/fullscreen.min.js
+#= require plugins/help.min.js
+#= require plugins/image.min.js
+#= require plugins/image_manager.min.js
+#= require plugins/inline_style.min.js
+#= require plugins/line_breaker.min.js
+#= require plugins/link.min.js
+#= require plugins/lists.min.js
+#= require plugins/paragraph_format.min.js
+#= require plugins/paragraph_style.min.js
+#= require plugins/print.min.js
+#= require plugins/quick_insert.min.js
+#= require plugins/quote.min.js
+#= require plugins/save.min.js
+#= require plugins/table.min.js
+#= require plugins/special_characters.min.js
+#= require plugins/url.min.js
+#= require plugins/video.min.js
 ```
 
 ```css
-/*
- *= require plugins/char_counter.min.css
- *= require plugins/code_view.min.css
- *= require plugins/colors.min.css
- *= require plugins/emoticons.min.css
- *= require plugins/file.min.css
- *= require plugins/fullscreen.min.css
- *= require plugins/help.min.css
- *= require plugins/image_manager.min.css
- *= require plugins/image.min.css
- *= require plugins/line_breaker.min.css
- *= require plugins/quick_insert.min.css
- *= require plugins/special_characters.min.css
- *= require plugins/table.min.css
- *= require plugins/video.min.css
- */
+@import 'plugins/char_counter.min.css';
+@import 'plugins/code_view.min.css';
+@import 'plugins/colors.min.css';
+@import 'plugins/emoticons.min.css';
+@import 'plugins/file.min.css';
+@import 'plugins/fullscreen.min.css';
+@import 'plugins/help.min.css';
+@import 'plugins/image_manager.min.css';
+@import 'plugins/image.min.css';
+@import 'plugins/line_breaker.min.css';
+@import 'plugins/quick_insert.min.css';
+@import 'plugins/special_characters.min.css';
+@import 'plugins/table.min.css';
+@import 'plugins/video.min.css';
 ```
 
 Similar, if you want to use language translation you have to include the translation file.
 
 ```javascript
-// Include Language if needed
-//= require languages/ro.js
+# Include Language if needed
+#= require languages/ro.js
 ```
 
 Then restart your web server if it was previously running.

@@ -58,10 +58,12 @@ If you need to use any of the [Available Plugins](https://froala.com/wysiwyg-edi
 //= require plugins/lists.min.js
 //= require plugins/paragraph_format.min.js
 //= require plugins/paragraph_style.min.js
+//= require plugins/print.min.js
 //= require plugins/quick_insert.min.js
 //= require plugins/quote.min.js
 //= require plugins/save.min.js
 //= require plugins/table.min.js
+//= require plugins/special_characters.min.js
 //= require plugins/url.min.js
 //= require plugins/video.min.js
 ```
@@ -79,6 +81,7 @@ If you need to use any of the [Available Plugins](https://froala.com/wysiwyg-edi
  *= require plugins/image.min.css
  *= require plugins/line_breaker.min.css
  *= require plugins/quick_insert.min.css
+ *= require plugins/special_characters.min.css
  *= require plugins/table.min.css
  *= require plugins/video.min.css
  */

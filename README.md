@@ -27,12 +27,12 @@ In your `application.css`, include the css file:
 
 If you want to use the dark theme, then you have to include `themes/dark.min.css` file too.
 
-In your `application.js`, include the JS file:
+In your `application.js.coffee`, include the JS file:
 
-```javascript
-//
-//= require froala_editor.min.js
-//
+```coffeescript
+#= require froala_editor.min.js
+
+$('selector').froalaEditor();
 ```
 
 If you need to use any of the [Available Plugins](https://froala.com/wysiwyg-editor/docs/plugins), then you should include those too in your `application.js.coffee` and `application.css.scss`.

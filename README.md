@@ -37,7 +37,7 @@ In your `application.js`, include the JS file:
 
 If you need to use any of the [Available Plugins](https://froala.com/wysiwyg-editor/docs/plugins), then you should include those too in your `application.js.coffee` and `application.css.scss`.
 
-```javascript
+```coffeescript
 # Include other plugins.
 #= require plugins/align.min.js
 #= require plugins/char_counter.min.js

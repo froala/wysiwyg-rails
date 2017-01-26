@@ -14,7 +14,7 @@ and run `bundle install`.
 
 ## Include in assets
 
-In your `application.css`, include the css file:
+In your `application.css.scss`, include the css file:
 
 ```css
 /*

@@ -1,4 +1,4 @@
-require "font-awesome-rails"
+require "fontawesome-sass"
 
 module WYSIWYG
   module Rails

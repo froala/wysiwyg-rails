@@ -99,6 +99,9 @@ Then restart your web server if it was previously running.
 
 Details about initializing the editor can be found in the [Froala WYSIWYG Editor official documentation](https://www.froala.com/wysiwyg-editor/docs).
 
+## Getting Started
+Gem version "2.0.0-rc.3" is up to date with [Froala Editor (version 2)](https://github.com/froala/wysiwyg-editor) - read the updated documentation for [how to initialize the editor](https://www.froala.com/wysiwyg-editor/v2.0/docs/migrate-from-v1#initialization) and other changes.
+
 ## License
 
 The `wysiwyg-rails` project is under MIT license. However, in order to use Froala WYSIWYG HTML Editor plugin you should purchase a license for it.

@@ -23,8 +23,8 @@ In your `application.css.scss`, include the css file:
 
 ```css
 /*
- @import "froala_editor.min.css";
- @import "froala_style.min.css";
+ @import "froala_editor.min";
+ @import "froala_style.min";
  @import "font-awesome-sprockets";
  @import "font-awesome";
  */

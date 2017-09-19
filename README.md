@@ -72,6 +72,10 @@ If you need to use any of the [Available Plugins](https://froala.com/wysiwyg-edi
 #= require plugins/special_characters.min.js
 #= require plugins/url.min.js
 #= require plugins/video.min.js
+
+#= require third_party/embedly.min.js
+#= require third_party/image_aviary.min.js
+#= require third_party/spell_checker.min.js
 ```
 
 ```css
@@ -89,6 +93,9 @@ If you need to use any of the [Available Plugins](https://froala.com/wysiwyg-edi
 @import 'plugins/special_characters.min.css';
 @import 'plugins/table.min.css';
 @import 'plugins/video.min.css';
+
+@import 'third_party/embedly.min.css';
+@import 'third_party/spell_checker.min.css';
 ```
 
 Similar, if you want to use language translation you have to include the translation file.

@@ -15,5 +15,4 @@ Gem::Specification.new do |gem|
   gem.version       = WYSIWYG::Rails::VERSION
 
   gem.add_dependency "railties", ">= 3.2", "< 6.0"
-  gem.add_dependency "font-awesome-sass", ">= 4.4.0"
 end

@@ -13,9 +13,12 @@ Add this to your Gemfile:
 
 ```ruby
 gem "wysiwyg-rails"
+gem "font-awesome-sass"
 ```
 
 and run `bundle install`.
+
+Note, you can include your own alternative Font Awesome implementation rather than the `font-awesome-sass` gem if you like. In that case, you'll need to modify/remove the import statements below to work with your implementation.
 
 ## Include in assets
 

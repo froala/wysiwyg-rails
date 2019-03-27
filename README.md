@@ -13,12 +13,9 @@ Add this to your Gemfile:
 
 ```ruby
 gem "wysiwyg-rails"
-gem "font-awesome-sass"
 ```
 
 and run `bundle install`.
-
-Note, you can include your own alternative Font Awesome implementation rather than the `font-awesome-sass` gem if you like. In that case, you'll need to modify/remove the import statements below to work with your implementation.
 
 ## Include in assets
 
@@ -28,8 +25,6 @@ In your `application.css.scss`, include the css file:
 /*
  @import "froala_editor.min";
  @import "froala_style.min";
- @import "font-awesome-sprockets";
- @import "font-awesome";
  */
 ```
 
@@ -40,7 +35,9 @@ In your `application.js.coffee`, include the JS file:
 ```coffeescript
 #= require froala_editor.min.js
 
-$('selector').froalaEditor();
+new FroalaEditor('selector',{
+  
+});
 ```
 
 If you need to use any of the [Available Plugins](https://froala.com/wysiwyg-editor/docs/plugins), then you should include those too in your `application.js.coffee` and `application.css.scss`.
@@ -80,7 +77,6 @@ If you need to use any of the [Available Plugins](https://froala.com/wysiwyg-edi
 
 #= require third_party/embedly.min.js
 #= require third_party/font_awesome.min.js
-#= require third_party/image_aviary.min.js
 #= require third_party/image_tui.min.js
 #= require third_party/spell_checker.min.js
 ```

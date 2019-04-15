@@ -13,6 +13,7 @@ Add this to your Gemfile:
 
 ```ruby
 gem "wysiwyg-rails"
+gem "font-awesome-sass"
 ```
 
 and run `bundle install`.
@@ -25,6 +26,8 @@ In your `application.css.scss`, include the css file:
 /*
  @import "froala_editor.min";
  @import "froala_style.min";
+ @import "font-awesome-sprockets";
+ @import "font-awesome";
  */
 ```
 

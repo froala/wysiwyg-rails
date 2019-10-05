@@ -25,8 +25,6 @@ In your `application.css.scss`, include the css file:
 /*
  @import "froala_editor.min";
  @import "froala_style.min";
- @import "font-awesome-sprockets";
- @import "font-awesome";
  */
 ```
 
@@ -37,7 +35,9 @@ In your `application.js.coffee`, include the JS file:
 ```coffeescript
 #= require froala_editor.min.js
 
-$('selector').froalaEditor();
+new FroalaEditor('selector',{
+  
+});
 ```
 
 If you need to use any of the [Available Plugins](https://froala.com/wysiwyg-editor/docs/plugins), then you should include those too in your `application.js.coffee` and `application.css.scss`.
@@ -58,8 +58,10 @@ If you need to use any of the [Available Plugins](https://froala.com/wysiwyg-edi
 #= require plugins/help.min.js
 #= require plugins/image.min.js
 #= require plugins/image_manager.min.js
+#= require plugins/inline_class.min.js
 #= require plugins/inline_style.min.js
 #= require plugins/line_breaker.min.js
+#= require plugins/line_height.min.js
 #= require plugins/link.min.js
 #= require plugins/lists.min.js
 #= require plugins/paragraph_format.min.js
@@ -74,7 +76,8 @@ If you need to use any of the [Available Plugins](https://froala.com/wysiwyg-edi
 #= require plugins/video.min.js
 
 #= require third_party/embedly.min.js
-#= require third_party/image_aviary.min.js
+#= require third_party/font_awesome.min.js
+#= require third_party/image_tui.min.js
 #= require third_party/spell_checker.min.js
 ```
 
@@ -95,6 +98,7 @@ If you need to use any of the [Available Plugins](https://froala.com/wysiwyg-edi
 @import 'plugins/video.min.css';
 
 @import 'third_party/embedly.min.css';
+@import 'third_party/image_tui.min.css';
 @import 'third_party/spell_checker.min.css';
 ```
 

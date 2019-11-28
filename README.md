@@ -16,6 +16,31 @@ gem "wysiwyg-rails"
 ```
 
 and run `bundle install`.
+## Usage
+In your index.html.erb add
+```
+<script type="text/javascript" src = "../../assets/froala_editor.pkgd.min.js"></script>
+```
+To use third-party plugins  add
+```
+<script type="text/javascript" src = "../../assets/third_party/font_awesome.min.js"></script>
+<script type="text/javascript" src = "../../assets/third_party/embedly.min.js"></script>
+<script type="text/javascript" src = "../../assets/third_party/image_tui.min.js"></script>
+<script type="text/javascript" src = "../../assets/third_party/spell_checker.min.js"</script>
+```
+Initialize editor by adding below in body of index.html.erb
+```
+ new FroalaEditor('#edit', {
+   
+  })
+```
+## Options
+You can pass options to editor by including these in index.html.erb
+```
+new FroalaEditor('#editor', {
+options :  value
+});
+```
 
 ## Include in assets
 

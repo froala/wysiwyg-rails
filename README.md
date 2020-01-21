@@ -28,6 +28,10 @@ To use third-party plugins  add
 <script type="text/javascript" src = "../../assets/third_party/image_tui.min.js"></script>
 <script type="text/javascript" src = "../../assets/third_party/spell_checker.min.js"</script>
 ```
+Add font-awesome depencdency 
+```
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+```
 Initialize editor by adding below in body of index.html.erb
 ```
  new FroalaEditor('#edit', {

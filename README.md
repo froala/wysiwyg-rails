@@ -20,6 +20,12 @@ and run `bundle install`.
 
 Note, you can include your own alternative Font Awesome implementation rather than the `font-awesome-sass` gem if you like. In that case, you'll need to modify/remove the import statements below to work with your implementation.
 
+You have to include the dependency JQuery library also. Please add the 
+```
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+```
+in your app file `app/views/layouts/application.html.erb`
+
 ## Include in assets
 
 In your `application.css.scss`, include the css file:
@@ -118,6 +124,10 @@ Then restart your web server if it was previously running.
 ## Initialize Editor
 
 Details about initializing the editor can be found in the [Froala WYSIWYG Editor official documentation](https://www.froala.com/wysiwyg-editor/docs).
+
+## Generic
+
+App rails version should be >= 3.2 and < 6.0
 
 ## License
 

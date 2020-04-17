@@ -37,6 +37,7 @@ In your `application.html.erb`, include the dependency JQuery library:
 or
 
 add it in the Gemfile:
+
         gem 'jquery-rails'
 
 and include the same in your `application.js.coffee`,
@@ -149,6 +150,7 @@ Similar, if you want to use language translation you have to include the transla
 Then restart your web server if it was previously running.
 
 Note: If you are working with `.js` files instead of `.coffee`, you will have to replace the `#=` with `//=` for the `require` statements as shown below.
+
         //= require froala_editor.min.js
 
 ## Initialize Editor

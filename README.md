@@ -16,6 +16,12 @@ gem "wysiwyg-rails"
 gem "font-awesome-sass"
 ```
 
+which will include the latest. If you need to include specific version, please add:
+
+```ruby
+gem "wysiwyg-rails", '~> x.x', '>= x.x.x'
+```
+
 and run `bundle install`.
 
 Note, you can include your own alternative Font Awesome implementation rather than the `font-awesome-sass` gem if you like. In that case, you'll need to modify/remove the import statements below to work with your implementation.
@@ -28,7 +34,18 @@ In your `application.html.erb`, include the dependency JQuery library:
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 ```
 
-In your `application.css.scss`, include the css file:
+or
+
+add it in the Gemfile:
+        gem 'jquery-rails'
+
+and include the same in your `application.js.coffee`,
+```coffeescript
+#= require jquery
+#= require jquery_ujs
+```
+
+In your `application.css.scss`, include the css files:
 
 ```css
 /*
@@ -36,6 +53,16 @@ In your `application.css.scss`, include the css file:
  @import "froala_style.min";
  @import "font-awesome-sprockets";
  @import "font-awesome";
+ */
+```
+or
+
+```css
+/*
+ @import "froala_editor.min.css";
+ @import "froala_style.min.css";
+ @import "font-awesome-sprockets.scss";
+ @import "font-awesome.scss";
  */
 ```
 
@@ -120,6 +147,9 @@ Similar, if you want to use language translation you have to include the transla
 ```
 
 Then restart your web server if it was previously running.
+
+Note: If you are working with `.js` files instead of `.coffee`, you will have to replace the `#=` with `//=` for the `require` statements as shown below.
+        //= require froala_editor.min.js
 
 ## Initialize Editor
 

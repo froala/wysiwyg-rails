@@ -22,6 +22,12 @@ Note, you can include your own alternative Font Awesome implementation rather th
 
 ## Include in assets
 
+In your `application.html.erb`, include the dependency JQuery library:
+
+```
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+```
+
 In your `application.css.scss`, include the css file:
 
 ```css
@@ -118,6 +124,10 @@ Then restart your web server if it was previously running.
 ## Initialize Editor
 
 Details about initializing the editor can be found in the [Froala WYSIWYG Editor official documentation](https://www.froala.com/wysiwyg-editor/docs).
+
+## Generic
+
+App rails version should be >= 3.2 and < 6.0
 
 ## License
 

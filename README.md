@@ -21,7 +21,7 @@ To add particular version use as:
 gem "wysiwyg-rails", '~> x.x', '>= x.x.x'
 ```
 Example:
-```
+```ruby
 gem "wysiwyg-rails", '~> 2.9', '>= 2.9.7'
 ```
 
@@ -40,7 +40,7 @@ In your `application.html.erb`, include the dependency JQuery library:
 OR
 
 To add in Gemfile:
-        
+
 ```ruby
 gem 'jquery-rails'
 ```

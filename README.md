@@ -22,7 +22,7 @@ gem "wysiwyg-rails", '~> x.x', '>= x.x.x'
 ```
 Example:
 ```ruby
-gem "wysiwyg-rails", '~> 2.9', '>= 2.9.7'
+gem "wysiwyg-rails", '~> 2.9', '>= 2.9.8'
 ```
 
 and run `bundle install`.

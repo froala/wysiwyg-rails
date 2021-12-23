@@ -14,5 +14,5 @@ Gem::Specification.new do |gem|
   gem.require_paths = ["lib"]
   gem.version       = WYSIWYG::Rails::VERSION
 
-  gem.add_dependency "railties", ">= 3.2.7", "< 7.0"
+  gem.add_dependency "railties", ">= 3.2.7", "< 7.1"
 end

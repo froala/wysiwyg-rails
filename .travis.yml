@@ -46,6 +46,8 @@ matrix:
       gemfile: gemfiles/rails7.gemfile
     - rvm: 2.2.2
       gemfile: gemfiles/rails6.gemfile
+    - rvm: 2.2.2
+      gemfile: gemfiles/rails7.gemfile
     - rvm: 2.2.0
       gemfile: gemfiles/rails7.gemfile
     - rvm: 2.3.0

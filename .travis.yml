@@ -2,9 +2,8 @@ git:
   depth: false
   quiet: false
 language: generic
-dist: bionic 
-sudo: required
-  
+dist: bionic
+sudo: required  
 branches:
   only:
     - /dev*/

@@ -1,66 +1,34 @@
-language: ruby
-cache: bundler
-rvm:
-  - 1.9.3
-  - 2.0.0
-  - 2.1.0
-  - 2.2.0
-  - 2.2.2
-  - 2.3.0
-  - 2.4.0
-  - 2.5.0
-  - 2.6.0
-  - 2.7.0
-gemfile:
-  - gemfiles/rails4.gemfile
-  - gemfiles/rails5.gemfile
-  - gemfiles/rails6.gemfile
-  - gemfiles/rails7.gemfile
+git: 
+  depth: false
+  quiet: false
+language: generic
+dist: bionic
+sudo: required  
+branches:
+  only:
+    - /dev*/
+    - /AO-dev*/
+    - /QA*/
+    - /QE*/
+    - /RC*/
+    - /Release-Master*/
+
+env:
+- SHORT_COMMIT= `git rev-parse --short=7 ${TRAVIS_COMMIT}`
+
 before_install:
-  - gem update bundler
-matrix:
-  exclude:
-    - rvm: 1.9.3
-      gemfile: gemfiles/rails5.gemfile
-    - rvm: 1.9.3
-      gemfile: gemfiles/rails6.gemfile
-    - rvm: 1.9.3
-      gemfile: gemfiles/rails7.gemfile
-    - rvm: 2.0.0
-      gemfile: gemfiles/rails5.gemfile
-    - rvm: 2.0.0
-      gemfile: gemfiles/rails6.gemfile
-    - rvm: 2.0.0
-      gemfile: gemfiles/rails7.gemfile
-    - rvm: 2.1.0
-      gemfile: gemfiles/rails5.gemfile
-    - rvm: 2.1.0
-      gemfile: gemfiles/rails6.gemfile
-    - rvm: 2.1.0
-      gemfile: gemfiles/rails7.gemfile
-    - rvm: 2.2.0
-      gemfile: gemfiles/rails5.gemfile
-    - rvm: 2.2.0
-      gemfile: gemfiles/rails6.gemfile
-    - rvm: 2.2.0
-      gemfile: gemfiles/rails7.gemfile
-    - rvm: 2.2.2
-      gemfile: gemfiles/rails6.gemfile
-    - rvm: 2.2.2
-      gemfile: gemfiles/rails7.gemfile
-    - rvm: 2.2.0
-      gemfile: gemfiles/rails7.gemfile
-    - rvm: 2.3.0
-      gemfile: gemfiles/rails6.gemfile
-    - rvm: 2.3.0
-      gemfile: gemfiles/rails7.gemfile
-    - rvm: 2.4.0
-      gemfile: gemfiles/rails6.gemfile
-    - rvm: 2.4.0
-      gemfile: gemfiles/rails7.gemfile
-    - rvm: 2.5.0
-      gemfile: gemfiles/rails6.gemfile
-    - rvm: 2.5.0
-      gemfile: gemfiles/rails7.gemfile
-    - rvm: 2.6.0
-      gemfile: gemfiles/rails7.gemfile
+  - echo $TRAVIS_BRANCH
+  - echo $PWD
+  - echo $TRAVIS_COMMIT
+  - echo $BUILD_REPO_NAME
+jobs:
+  include:
+    if: commit_message =~ /(deploy-yes)/
+    script: 
+      - chmod u+x build-push-to-nexus.sh && bash build-push-to-nexus.sh
+notifications:
+  email:
+    recipients:
+      - harasunu.narayan@froala.com
+    on_success: always
+    on_failure: always

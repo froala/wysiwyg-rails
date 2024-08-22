@@ -26,7 +26,7 @@ To use third-party plugins  add
 <script type="text/javascript" src = "../../assets/third_party/font_awesome.min.js"></script>
 <script type="text/javascript" src = "../../assets/third_party/embedly.min.js"></script>
 <script type="text/javascript" src = "../../assets/third_party/image_tui.min.js"></script>
-<script type="text/javascript" src = "../../assets/third_party/spell_checker.min.js"</script>
+<script type="text/javascript" src = "../../assets/third_party/spell_checker.min.js"></script>
 ```
 Initialize editor by adding below in body of index.html.erb
 ```

@@ -1,20 +1,19 @@
 /*!
- * froala_editor v4.7.1 (https://www.froala.com/wysiwyg-editor)
+ * froala_editor v5.2.0 (https://www.froala.com/wysiwyg-editor)
  * License https://froala.com/wysiwyg-editor/terms/
- * Copyright 2014-2025 Froala Labs
+ * Copyright 2014-2026 Froala Labs
  */
 
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('froala-editor')) :
   typeof define === 'function' && define.amd ? define(['froala-editor'], factory) :
-  (factory(global.FroalaEditor));
-}(this, (function (FE) { 'use strict';
-
-  FE = FE && FE.hasOwnProperty('default') ? FE['default'] : FE;
+  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global.FroalaEditor));
+})(this, (function (FE) { 'use strict';
 
   /**
    * Estonian
    */
+
   FE.LANGUAGE['et'] = {
     translation: {
       // Place holder
@@ -106,6 +105,7 @@
       'Something went wrong. Please try again.': "Midagi l\xE4ks valesti. Palun proovi uuesti.",
       'Image Caption': 'Pildi pealkiri',
       'Advanced Edit': 'Täiustatud redigeerimine',
+      'Advanced Edit (File-Robot)': 'Täiustatud redigeerimine',
       // Video
       'Insert Video': 'Lisa video',
       'Embedded Code': 'Varjatud koodi',
@@ -156,6 +156,16 @@
       'Left align': 'Vasak joondus',
       'Center align': 'Joonda keskele',
       'Right align': 'Joonda paremale',
+      'Left align without wrap': 'Joonda vasakule ilma mähkimiseta',
+      'Right align without wrap': 'Joonda paremale ilma mähkimiseta',
+      'solid': 'Línea sólida',
+      'dashed': 'Línea discontinua',
+      'dotted': 'Línea punteada',
+      'double': 'Línea doble',
+      'groove': 'Línea ranurada',
+      'ridge': 'Línea en relieve',
+      'inset': 'Línea interior',
+      'outset': 'Línea exterior',
       // Files
       'Upload File': "Lae fail \xFCles",
       'Drop file': 'Aseta fail',
@@ -230,7 +240,6 @@
       'Clear Formatting': 'Eemalda formaatimine',
       // Save
       'Save': 'Salvesta',
-      'Ok': 'Ok',
       // Undo, redo
       'Undo': "V\xF5ta tagasi",
       'Redo': 'Tee uuesti',
@@ -320,10 +329,91 @@
       'Enter the anchor name without space': 'Sisestage ankrunimi ilma tühikuteta',
       'Anchor name already exists.': 'Ankrunimi on juba olemas.',
       // Export to Word
-      'Export to Word': 'Ekspordi sõnasse'
+      'Export to Word': 'Ekspordi sõnasse',
+      'Ensure that all required dependent libraries are available for the plugin to work.': 'Veenduge, et kõik vajalikud sõltuvad teegid oleksid pistikprogrammi töötamiseks saadaval.',
+      // Import_from_word
+      'Import from Word': 'Impordi Wordist',
+      'Please upload a valid file': 'Palun laadi üles kehtiv fail.',
+      'File size must be less than': 'Faili suurus peab olema väiksem kui',
+      //Code Snippet
+      'Code Snippet': 'Koodilõik',
+      'Insert Code Snippet': 'Sisesta koodilõik',
+      'Edit Code Snippet': 'Muuda koodilõiku',
+      'Font Awesome': 'Font Awesome',
+      'Web Application Icons': 'Veebirakenduse ikoonid',
+      'Accessibility Icons': 'Hõlbustusikoonid',
+      'Hand Icons': 'Käte ikoonid',
+      'Transportation Icons': 'Transpordiikoonid',
+      'Gender Icons': 'Soo ikoonid',
+      'Form Control Icons': 'Vormikontrollide ikoonid',
+      'Payment Icons': 'Maksete ikoonid',
+      'Chart Icons': 'Diagrammiikoonid',
+      'Currency Icons': 'Valuutaikoonid',
+      'Text Editor Icons': 'Tekstiredaktori ikoonid',
+      'Brand Icons': 'Brändiikoonid',
+      'Default': 'Vaikimisi',
+      'Lower Alpha': 'Väiketähed (a, b, c)',
+      'Lower Greek': 'Väikesed kreeka tähed',
+      'Lower Roman': 'Väikesed rooma numbrid',
+      'Upper Alpha': 'Suurtähed (A, B, C)',
+      'Upper Roman': 'Suured rooma numbrid',
+      'Circle': 'Ring',
+      'Disc': 'Täidetud ring',
+      'Square': 'Ruut',
+      'Line Height': 'Reakõrgus',
+      'Single': 'Ühekordne',
+      'Double': 'Kakskordne',
+      'Insert File': 'Lisa fail',
+      'Text Color': 'Teksti värv',
+      'Background Color': 'Taustavärv',
+      'Gray': 'Hall',
+      'Spaced': 'Vahedega',
+      'Uppercase': 'Suurtähed',
+      'Rounded': 'Ümar',
+      'Bordered': 'Äärisega',
+      'Shadow': 'Vari',
+      'Custom background colour input': 'Kohandatud taustavärvi sisestus',
+      'Background colour picker': 'Taustavärvi valija',
+      'Custom border colour input': 'Kohandatud äärisevärvi sisestus',
+      'Border colour picker': 'Äärisevärvi valija',
+      'Border colour': 'Äärise värv',
+      'Inline Class': 'Reasisene klass',
+      'Download PDF': 'Laadi alla PDF',
+      'Dashed Borders': 'Katkendjoonega ääred',
+      'Alternate Rows': 'Vahelduvad read',
+      'Highlighted': 'Esiletõstetud',
+      'Thick': 'Paks',
+      'Words': 'Sõnad',
+      'Insert Files': 'Lisa failid',
+      'Image file type is invalid.': 'Pildifaili tüüp ei ole sobiv.',
+      'File is too large.': 'Fail on liiga suur.',
+      'Alternate Text': 'Alternatiivtekst',
+      'Your browser does not support HTML5 vídeo.': 'Sinu brauser ei toeta HTML5 videot.',
+      'Transparent': 'Läbipaistev',
+      'Big Red': 'Suur punane',
+      'Small Blue': 'Väike sinine',
+      // AI Assist
+      'AI Shortcuts': 'AI otseteed',
+      'Ask AI to generate or refine text, adjusting its tone and language.': 'Paluge AI-l teksti luua või täiustada, kohandades selle tooni ja keelt.',
+      'Ask AI to generate': 'Paluge AI-l luua',
+      'AI responses can be inaccurate.': 'AI vastused võivad olla ebatäpsed.',
+      'Select a text layer to edit': 'Valige redigeeritav tekstikiht',
+      'Change Tone': 'Muuda Tooni',
+      'Translate To': 'Tõlgi Keelde',
+      'Generating Response': 'Vastuse Loomine',
+      'Submit': 'Esita',
+      'Stop': 'Peata',
+      'Try again': 'Proovi uuesti',
+      // AI Terms Consent
+      'To use AI features in Froala, you need to accept the AI Supplemental Terms.': 'Froala AI-funktsioonide kasutamiseks peate nõustuma AI täiendavate tingimustega.',
+      'Please set': 'Palun seadke',
+      'to': 'väärtusele',
+      'in your configuration to provide consent.': 'oma konfiguratsioonis nõusoleku andmiseks.',
+      'You can review the terms here:': 'Saate tingimused siin üle vaadata:',
+      'View AI Supplemental Terms': 'Vaata AI täiendavaid tingimusi'
     },
     direction: 'ltr'
   };
 
-})));
+}));
 //# sourceMappingURL=et.js.map

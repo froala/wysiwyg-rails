@@ -1,20 +1,19 @@
 /*!
- * froala_editor v4.7.1 (https://www.froala.com/wysiwyg-editor)
+ * froala_editor v5.2.0 (https://www.froala.com/wysiwyg-editor)
  * License https://froala.com/wysiwyg-editor/terms/
- * Copyright 2014-2025 Froala Labs
+ * Copyright 2014-2026 Froala Labs
  */
 
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('froala-editor')) :
   typeof define === 'function' && define.amd ? define(['froala-editor'], factory) :
-  (factory(global.FroalaEditor));
-}(this, (function (FE) { 'use strict';
-
-  FE = FE && FE.hasOwnProperty('default') ? FE['default'] : FE;
+  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global.FroalaEditor));
+})(this, (function (FE) { 'use strict';
 
   /**
    * Finnish
    */
+
   FE.LANGUAGE['fi'] = {
     translation: {
       // Place holder
@@ -106,6 +105,7 @@
       'Something went wrong. Please try again.': "Jotain meni pieleen. Yrit\xE4 uudelleen.",
       'Image Caption': 'Kuva-otsikko',
       'Advanced Edit': 'Edistynyt muokkaus',
+      'Advanced Edit (File-Robot)': 'Edistynyt muokkaus',
       // Video
       'Insert Video': "Lis\xE4\xE4 video",
       'Embedded Code': 'Upotettu koodi',
@@ -156,6 +156,16 @@
       'Left align': 'Tasaa vasemmalle',
       'Center align': 'Keskitä',
       'Right align': 'Oikea tasaus',
+      'Left align without wrap': 'Tasaa vasemmalle ilman rivitystä',
+      'Right align without wrap': 'Tasaa oikealle ilman rivitystä',
+      'solid': 'Yhtenäinen viiva',
+      'dashed': 'Katkoviiva',
+      'dotted': 'Pisteviiva',
+      'double': 'Kaksoisviiva',
+      'groove': 'Urvallinen viiva',
+      'ridge': 'Kohoviiva',
+      'inset': 'Sisäviiva',
+      'outset': 'Ulkoviiiva',
       // Files
       'Upload File': 'Lataa tiedosto',
       'Drop file': 'Pudota tiedosto',
@@ -230,7 +240,6 @@
       'Clear Formatting': 'Poista muotoilu',
       // Save
       'Save': 'Tallentaa',
-      'Ok': 'Ok',
       // Undo, redo
       'Undo': 'Peru',
       'Redo': 'Tee uudelleen',
@@ -320,10 +329,91 @@
       'Enter the anchor name without space': 'Syötä ankkurin nimi ilman välilyöntejä',
       'Anchor name already exists.': 'Ankkurin nimi on jo olemassa.',
       // Export to Word
-      'Export to Word': 'Vie Wordiin'
+      'Export to Word': 'Vie Wordiin',
+      'Ensure that all required dependent libraries are available for the plugin to work.': 'Varmista, että kaikki tarvittavat riippuvaiset kirjastot ovat käytettävissä liitännäisen toimimiseksi.',
+      // Import_from_word
+      'Import from Word': 'Tuo Wordista',
+      'Please upload a valid file': 'Lataa kelvollinen tiedosto.',
+      'File size must be less than': 'Tiedostokoon täytyy olla alle',
+      //Code Snippet
+      'Code Snippet': 'Koodikatkelma',
+      'Insert Code Snippet': 'Lisää koodikatkelma',
+      'Edit Code Snippet': 'Muokkaa koodikatkelmaa',
+      'Font Awesome': 'Font Awesome',
+      'Web Application Icons': 'Verkkosovellusikonit',
+      'Accessibility Icons': 'Esteettömyysikonit',
+      'Hand Icons': 'Käsikuvakkeet',
+      'Transportation Icons': 'Liikenneikonit',
+      'Gender Icons': 'Sukupuoli-ikonit',
+      'Form Control Icons': 'Lomakeohjainten ikonit',
+      'Payment Icons': 'Maksuikonit',
+      'Chart Icons': 'Kaavioikonit',
+      'Currency Icons': 'Valuuttaikonit',
+      'Text Editor Icons': 'Tekstieditorin ikonit',
+      'Brand Icons': 'Brändi-ikonit',
+      'Default': 'Oletus',
+      'Lower Alpha': 'Pienet kirjaimet (a, b, c)',
+      'Lower Greek': 'Pienet kreikkalaiset kirjaimet',
+      'Lower Roman': 'Pienet roomalaiset numerot',
+      'Upper Alpha': 'Isot kirjaimet (A, B, C)',
+      'Upper Roman': 'Isot roomalaiset numerot',
+      'Circle': 'Ympyrä',
+      'Disc': 'Täytetty ympyrä',
+      'Square': 'Neliö',
+      'Line Height': 'Riviväli',
+      'Single': 'Yksinkertainen',
+      'Double': 'Kaksinkertainen',
+      'Insert File': 'Lisää tiedosto',
+      'Text Color': 'Tekstin väri',
+      'Background Color': 'Taustaväri',
+      'Gray': 'Harmaa',
+      'Spaced': 'Välitetty',
+      'Uppercase': 'Isot kirjaimet',
+      'Rounded': 'Pyöristetty',
+      'Bordered': 'Reunuksellinen',
+      'Shadow': 'Varjo',
+      'Custom background colour input': 'Mukautettu taustavärin syöte',
+      'Background colour picker': 'Taustavärin valitsin',
+      'Custom border colour input': 'Mukautettu reunavärin syöte',
+      'Border colour picker': 'Reunavärin valitsin',
+      'Border colour': 'Reunaväri',
+      'Inline Class': 'Sisäinen luokka',
+      'Download PDF': 'Lataa PDF',
+      'Dashed Borders': 'Katkoviivareunat',
+      'Alternate Rows': 'Vuorottelevat rivit',
+      'Highlighted': 'Korostettu',
+      'Thick': 'Paksu',
+      'Words': 'Sanat',
+      'Insert Files': 'Lisää tiedostoja',
+      'Image file type is invalid.': 'Kuvatiedoston tyyppi ei ole kelvollinen.',
+      'File is too large.': 'Tiedosto on liian suuri.',
+      'Alternate Text': 'Vaihtoehtoinen teksti',
+      'Your browser does not support HTML5 vídeo.': 'Selaimesi ei tue HTML5-videota.',
+      'Transparent': 'Läpinäkyvä',
+      'Big Red': 'Suuri punainen',
+      'Small Blue': 'Pieni sininen',
+      // AI Assist
+      'AI Shortcuts': 'Tekoälyn pikakuvakkeet',
+      'Ask AI to generate or refine text, adjusting its tone and language.': 'Pyydä tekoälyä luomaan tai hiomaan tekstiä säätämällä sen sävyä ja kieltä.',
+      'Ask AI to generate': 'Pyydä tekoälyä luomaan',
+      'AI responses can be inaccurate.': 'Tekoälyn vastaukset voivat olla epätarkkoja.',
+      'Select a text layer to edit': 'Valitse muokattava tekstikerros',
+      'Change Tone': 'Vaihda Sävy',
+      'Translate To': 'Käännä Kielelle',
+      'Generating Response': 'Luodaan Vastausta',
+      'Submit': 'Lähetä',
+      'Stop': 'Pysäytä',
+      'Try again': 'Yritä uudelleen',
+      // AI Terms Consent
+      'To use AI features in Froala, you need to accept the AI Supplemental Terms.': 'Käyttääksesi tekoälyominaisuuksia Froalassa sinun on hyväksyttävä tekoälyn täydentävät ehdot.',
+      'Please set': 'Aseta',
+      'to': 'arvoon',
+      'in your configuration to provide consent.': 'määrityksissäsi antaaksesi suostumuksesi.',
+      'You can review the terms here:': 'Voit tarkastella ehtoja täältä:',
+      'View AI Supplemental Terms': 'Näytä tekoälyn täydentävät ehdot'
     },
     direction: 'ltr'
   };
 
-})));
+}));
 //# sourceMappingURL=fi.js.map

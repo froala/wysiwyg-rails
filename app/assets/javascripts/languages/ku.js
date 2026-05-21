@@ -1,20 +1,19 @@
 /*!
- * froala_editor v4.7.1 (https://www.froala.com/wysiwyg-editor)
+ * froala_editor v5.2.0 (https://www.froala.com/wysiwyg-editor)
  * License https://froala.com/wysiwyg-editor/terms/
- * Copyright 2014-2025 Froala Labs
+ * Copyright 2014-2026 Froala Labs
  */
 
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('froala-editor')) :
   typeof define === 'function' && define.amd ? define(['froala-editor'], factory) :
-  (factory(global.FroalaEditor));
-}(this, (function (FE) { 'use strict';
-
-  FE = FE && FE.hasOwnProperty('default') ? FE['default'] : FE;
+  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global.FroalaEditor));
+})(this, (function (FE) { 'use strict';
 
   /**
    * Arabic
    */
+
   FE.LANGUAGE['ku'] = {
     translation: {
       // Place holder
@@ -88,7 +87,7 @@
       'Drop image': 'ڕاکێشانی وێنە',
       'or click': 'یان کرتە',
       'Manage Images': 'بەڕێوەبردنی وێنە',
-      'ئامادەکردن': 'Cargando',
+      'Loading': 'ئامادەکردن',
       'Deleting': 'سڕینەوە',
       'Tags': 'تاگەکان',
       'Are you sure? Image will be deleted.': 'دڵنیایت لە سڕینەوەی وێنەکە',
@@ -149,6 +148,16 @@
       'Left align': 'محاذاة لليسار',
       'Center align': 'محاذاة للوسط',
       'Right align': 'محاذاة إلى اليمين',
+      'Left align without wrap': 'محاذاة لليسار بدون التفاف',
+      'Right align without wrap': 'محاذاة لليمين بدون التفاف',
+      'solid': 'خط صلب',
+      'dashed': 'خط متقطع',
+      'dotted': 'خط منقط',
+      'double': 'خط مزدوج',
+      'groove': 'خط محفور',
+      'ridge': 'خط بارز',
+      'inset': 'خط داخلي',
+      'outset': 'خط خارجي',
       // Files
       'Upload File': 'بەرزکردنەوەی پەڕگە',
       'Drop file': 'ڕاکێشانی پەڕگە',
@@ -312,10 +321,99 @@
       'Enter the anchor name without space': 'أدخل اسم المرجع بدون مسافات',
       'Anchor name already exists.': 'اسم المرجع موجود بالفعل.',
       // Export to Word
-      'Export to Word': 'تصدير إلى وورد'
+      'Export to Word': 'تصدير إلى وورد',
+      'Ensure that all required dependent libraries are available for the plugin to work.': 'دڵنیابە لە بەردەستبوونی هەموو کتێبخانە پێویستە وابەستەکان بۆ کارکردنی پڵاگینەکە.',
+      // import from Word
+      'Import from Word': 'هاوردە کردن لە وۆرد',
+      'Please upload a valid file': 'تکایە فایلێکی دروست باربکە.',
+      'File size must be less than': 'پێویستە قەبارەی فایلەکە لە خوار',
+      //Code Snippet
+      'Code Snippet': 'پارچە کۆد',
+      'Insert Code Snippet': 'دانانی پارچە کۆد',
+      'Edit Code Snippet': 'دەستکاریکردنی پارچە کۆد',
+      'Font Awesome': 'Font Awesome',
+      'Web Application Icons': 'Îkonên sepanên webê',
+      'Accessibility Icons': 'Îkonên gihîştinê',
+      'Hand Icons': 'Îkonên destan',
+      'Transportation Icons': 'Îkonên veguhastinê',
+      'Gender Icons': 'Îkonên zayendê',
+      'Form Control Icons': 'Îkonên kontrolên formê',
+      'Payment Icons': 'Îkonên dayînê',
+      'Chart Icons': 'Îkonên grafîkan',
+      'Currency Icons': 'Îkonên diravê',
+      'Text Editor Icons': 'Îkonên edîtora nivîsê',
+      'Brand Icons': 'Îkonên brandan',
+      'HEX Color': 'Rengê HEX',
+      'Default': 'Standard',
+      'Lower Alpha': 'Tîpên biçûk (a, b, c)',
+      'Lower Greek': 'Tîpên yewnanî yên biçûk',
+      'Lower Roman': 'Hejmarên romanî yên biçûk',
+      'Upper Alpha': 'Tîpên mezin (A, B, C)',
+      'Upper Roman': 'Hejmarên romanî yên mezin',
+      'Circle': 'Xal',
+      'Disc': 'Xala tije',
+      'Square': 'Çargoşe',
+      'Line Height': 'Bilindahiya rêzê',
+      'Single': 'Yekane',
+      'Double': 'Dû',
+      'Image Caption': 'Sernavê wêne',
+      'Advanced Edit': 'Sererastkirina pêşkeftî',
+      'Advanced Edit (File-Robot)': 'Sererastkirina pêşkeftî',
+      'Paste in a video URL': 'URL-a vîdyoyê binivîse',
+      'Drop video': 'Vîdyo bavêje vir',
+      'Your browser does not support HTML5 video.': 'Geroka te HTML5 video piştgirî nake.',
+      'Upload Video': 'Vîdyo bar bike',
+      'Insert File': 'Pelê têxe',
+      'Text Color': 'Rengê nivîsê',
+      'Background Color': 'Rengê paşîn',
+      'Gray': 'Reş',
+      'Spaced': 'Bi navber',
+      'Uppercase': 'Tîpên mezin',
+      'Rounded': 'Gerdkirî',
+      'Bordered': 'Bi sînor',
+      'Shadow': 'Sê',
+      'Custom background colour input': 'Têketina rengê paşîn a taybet',
+      'Background colour picker': 'Hilbijêrê rengê paşîn',
+      'Custom border colour input': 'Têketina rengê sînor a taybet',
+      'Border colour picker': 'Hilbijêrê rengê sînor',
+      'Border colour': 'Rengê sînor',
+      'Inline Class': 'Pola navrêz',
+      'Download PDF': 'PDF daxîne',
+      'Dashed Borders': 'Sînorên xêz-xêz',
+      'Alternate Rows': 'Rêzên alternatîf',
+      'Highlighted': 'Hatî berçavkirin',
+      'Thick': 'Stûr',
+      'Words': 'Gotin',
+      'Insert Files': 'Pelan têxe',
+      'Image file type is invalid.': 'Cureya pelê wêneyê nederbasdar e.',
+      'File is too large.': 'Pel pir mezin e.',
+      'Alternate Text': 'Nivîsa alternatîf',
+      'Your browser does not support HTML5 vídeo.': 'Geroka te vîdyoya HTML5 piştgirî nake.',
+      'Transparent': 'Zelal',
+      'Big Red': 'Sorê mezin',
+      'Small Blue': 'Şînê biçûk',
+      // AI Assist
+      'AI Shortcuts': 'ڕێبەری ژیری دەستکرد',
+      'Ask AI to generate or refine text, adjusting its tone and language.': 'داوا لە ژیری دەستکرد بکە بۆ دروستکردن یان باشترکردنی دەق، بە گونجاندنی شێواز و زمانی.',
+      'Ask AI to generate': 'داوا لە ژیری دەستکرد بکە بۆ دروستکردن',
+      'AI responses can be inaccurate.': 'وەڵامەکانی ژیری دەستکرد لەوانەیە نادروست بن.',
+      'Select a text layer to edit': 'چینێکی دەق هەڵبژێرە بۆ دەستکاریکردن',
+      'Change Tone': 'گۆڕینی شێواز',
+      'Translate To': 'وەرگێڕان بۆ',
+      'Generating Response': 'وەڵام دەهێنرێتە بەرهەم',
+      'Submit': 'ناردن',
+      'Stop': 'وەستان',
+      'Try again': 'دووبارە هەوڵ بدە',
+      // AI Terms Consent
+      'To use AI features in Froala, you need to accept the AI Supplemental Terms.': 'Ji bo karanîna taybetmendiyên AI li Froala, hûn hewce ne ku Mercên Pêvek ên AI qebûl bikin.',
+      'Please set': 'Ji kerema xwe saz bikin',
+      'to': 'li ser',
+      'in your configuration to provide consent.': 'di mîhenga xwe de da ku razîbûnê peyda bikin.',
+      'You can review the terms here:': 'Hûn dikarin mercan li vir binêrin:',
+      'View AI Supplemental Terms': 'Mercên Pêvek ên AI bibînin'
     },
     direction: 'rtl'
   };
 
-})));
+}));
 //# sourceMappingURL=ku.js.map

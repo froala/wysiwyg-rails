@@ -1,20 +1,19 @@
 /*!
- * froala_editor v4.7.1 (https://www.froala.com/wysiwyg-editor)
+ * froala_editor v5.2.0 (https://www.froala.com/wysiwyg-editor)
  * License https://froala.com/wysiwyg-editor/terms/
- * Copyright 2014-2025 Froala Labs
+ * Copyright 2014-2026 Froala Labs
  */
 
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('froala-editor')) :
   typeof define === 'function' && define.amd ? define(['froala-editor'], factory) :
-  (factory(global.FroalaEditor));
-}(this, (function (FE) { 'use strict';
-
-  FE = FE && FE.hasOwnProperty('default') ? FE['default'] : FE;
+  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global.FroalaEditor));
+})(this, (function (FE) { 'use strict';
 
   /**
    * Spanish
    */
+
   FE.LANGUAGE['es'] = {
     translation: {
       // Place holder
@@ -35,7 +34,7 @@
       'Square': 'Cuadrado',
       'Single': 'Soltero',
       'Double': 'Doble',
-      'More Rich': 'Más Rico',
+      'More Rich': 'Más formato enriquecido',
       'More Misc': 'Más Diverso',
       'Download PDF': 'Descargar PDF',
       // Basic formatting
@@ -126,6 +125,7 @@
       'Something went wrong. Please try again.': "Algo sali\xF3 mal. Por favor, vuelva a intentarlo.",
       'Image Caption': 'Captura de imagen',
       'Advanced Edit': 'Edición avanzada',
+      'Advanced Edit (File-Robot)': 'Edición avanzada',
       // Video
       'Insert Video': 'Insertar video',
       'Embedded Code': "C\xF3digo incrustado",
@@ -176,6 +176,16 @@
       'Left align': 'Alinear a la izquierda',
       'Center align': 'Alinear al centro',
       'Right align': 'Alinear a la derecha',
+      'Left align without wrap': 'Alinear a la izquierda sin ajuste',
+      'Right align without wrap': 'Alinear a la derecha sin ajuste',
+      'solid': 'Línea sólida',
+      'dashed': 'Línea discontinua',
+      'double': 'Doble',
+      'dotted': 'Línea punteada',
+      'groove': 'Línea ranurada',
+      'ridge': 'Línea en relieve',
+      'inset': 'Línea interior',
+      'outset': 'Línea exterior',
       // Files
       'Upload File': 'Subir archivo',
       'Drop file': 'Soltar archivo',
@@ -248,8 +258,6 @@
       'Insert Horizontal Line': "Insertar l\xEDnea horizontal",
       // Clear formatting
       'Clear Formatting': 'Quitar el formato',
-      // Save
-      'Ok': 'Ok',
       // Undo, redo
       'Undo': 'Deshacer',
       'Redo': 'Rehacer',
@@ -332,10 +340,78 @@
       'Enter the anchor name without space': 'Ingrese el nombre del ancla sin espacio',
       'Anchor name already exists.': 'El nombre del ancla ya existe.',
       // Export to Word
-      'Export to Word': 'Exportar a Word'
+      'Export to Word': 'Exportar a Word',
+      'Ensure that all required dependent libraries are available for the plugin to work.': 'Asegúrese de que todas las librerías dependientes requeridas estén disponibles para que el plugin funcione.',
+      // Import_from_word
+      'Import from Word': 'Importar de Word',
+      'Please upload a valid file': 'Por favor, suba un archivo válido.',
+      'File size must be less than': 'El tamaño del archivo debe ser menor de',
+      //Code Snippet
+      'Code Snippet': 'Fragmento de Código',
+      'Insert Code Snippet': 'Insertar Fragmento de Código',
+      'Edit Code Snippet': 'Editar Fragmento de Código',
+      'Font Awesome': 'Font Awesome',
+      'Web Application Icons': 'Iconos de aplicaciones web',
+      'Accessibility Icons': 'Iconos de accesibilidad',
+      'Hand Icons': 'Iconos de manos',
+      'Transportation Icons': 'Iconos de transporte',
+      'Gender Icons': 'Iconos de género',
+      'Form Control Icons': 'Iconos de controles de formulario',
+      'Payment Icons': 'Iconos de pago',
+      'Chart Icons': 'Iconos de gráficos',
+      'Currency Icons': 'Iconos de moneda',
+      'Text Editor Icons': 'Iconos del editor de texto',
+      'Brand Icons': 'Iconos de marcas',
+      'Insert File': 'Insertar archivo',
+      'Save': 'Guardar',
+      'Characters': 'Caracteres',
+      'More Paragraph': 'Más formatos de párrafo',
+      'Gray': 'Gris',
+      'Spaced': 'Espaciado',
+      'Uppercase': 'Mayúsculas',
+      'Rounded': 'Redondeado',
+      'Bordered': 'Con borde',
+      'Shadow': 'Sombra',
+      'Custom background colour input': 'Entrada de color de fondo personalizado',
+      'Background colour picker': 'Selector de color de fondo',
+      'Custom border colour input': 'Entrada de color de borde personalizado',
+      'Border colour picker': 'Selector de color de borde',
+      'Border colour': 'Color de borde',
+      'Dashed Borders': 'Bordes discontinuos',
+      'Alternate Rows': 'Filas alternas',
+      'Highlighted': 'Resaltado',
+      'Thick': 'Grueso',
+      'Words': 'Palabras',
+      'Insert Files': 'Insertar archivos',
+      'Image file type is invalid.': 'El tipo de archivo de imagen no es válido.',
+      'File is too large.': 'El archivo es demasiado grande.',
+      'Alternate Text': 'Texto alternativo',
+      'Your browser does not support HTML5 vídeo.': 'Tu navegador no soporta video HTML5.',
+      'Transparent': 'Transparente',
+      'Big Red': 'Rojo grande',
+      'Small Blue': 'Azul pequeño',
+      // AI Assist
+      'AI Shortcuts': 'Atajos de IA',
+      'Ask AI to generate or refine text, adjusting its tone and language.': 'Pida a la IA que genere o refine texto, ajustando su tono e idioma.',
+      'Ask AI to generate': 'Pedir a la IA que genere',
+      'AI responses can be inaccurate.': 'Las respuestas de la IA pueden ser inexactas.',
+      'Select a text layer to edit': 'Seleccione una capa de texto para editar',
+      'Change Tone': 'Cambiar Tono',
+      'Translate To': 'Traducir A',
+      'Generating Response': 'Generando Respuesta',
+      'Submit': 'Enviar',
+      'Stop': 'Detener',
+      'Try again': 'Intentar de nuevo',
+      // AI Terms Consent
+      'To use AI features in Froala, you need to accept the AI Supplemental Terms.': 'Para usar las funciones de IA en Froala, debes aceptar los Términos Complementarios de IA.',
+      'Please set': 'Por favor, establezca',
+      'to': 'a',
+      'in your configuration to provide consent.': 'en su configuración para dar su consentimiento.',
+      'You can review the terms here:': 'Puede revisar los términos aquí:',
+      'View AI Supplemental Terms': 'Ver los Términos Complementarios de IA'
     },
     direction: 'ltr'
   };
 
-})));
+}));
 //# sourceMappingURL=es.js.map

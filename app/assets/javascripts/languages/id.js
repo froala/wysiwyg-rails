@@ -1,20 +1,19 @@
 /*!
- * froala_editor v4.7.1 (https://www.froala.com/wysiwyg-editor)
+ * froala_editor v5.2.0 (https://www.froala.com/wysiwyg-editor)
  * License https://froala.com/wysiwyg-editor/terms/
- * Copyright 2014-2025 Froala Labs
+ * Copyright 2014-2026 Froala Labs
  */
 
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('froala-editor')) :
   typeof define === 'function' && define.amd ? define(['froala-editor'], factory) :
-  (factory(global.FroalaEditor));
-}(this, (function (FE) { 'use strict';
-
-  FE = FE && FE.hasOwnProperty('default') ? FE['default'] : FE;
+  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global.FroalaEditor));
+})(this, (function (FE) { 'use strict';
 
   /**
    * Indonesian
    */
+
   FE.LANGUAGE['id'] = {
     translation: {
       // Place holder
@@ -106,6 +105,7 @@
       'Something went wrong. Please try again.': 'Ada yang salah. Silakan coba lagi.',
       'Image Caption': 'Keterangan gambar',
       'Advanced Edit': 'Edit lanjutan',
+      'Advanced Edit (File-Robot)': 'Edit lanjutan',
       // Video
       'Insert Video': 'Memasukkan video',
       'Embedded Code': 'Kode tertanam',
@@ -156,6 +156,16 @@
       'Left align': 'Rata kiri',
       'Center align': 'Rata tengah',
       'Right align': 'Sejajarkan kanan',
+      'Left align without wrap': 'Rata kiri tanpa perataan teks',
+      'Right align without wrap': 'Rata kanan tanpa perataan teks',
+      'solid': 'Garis penuh',
+      'dashed': 'Garis putus-putus',
+      'dotted': 'Garis titik-titik',
+      'double': 'Garis ganda',
+      'groove': 'Garis beralur',
+      'ridge': 'Garis timbul',
+      'inset': 'Garis bagian dalam',
+      'outset': 'Garis bagian luar',
       // Files
       'Upload File': 'Meng-upload berkas',
       'Drop file': 'Jatuhkan berkas',
@@ -230,7 +240,6 @@
       'Clear Formatting': 'Menghapus format',
       // Save
       'Save': 'Menyimpan',
-      'Ok': 'Oke',
       // Undo, redo
       'Undo': 'Batal',
       'Redo': 'Ulang',
@@ -320,10 +329,91 @@
       'Enter the anchor name without space': 'Masukkan nama jangkar tanpa spasi',
       'Anchor name already exists.': 'Nama jangkar sudah ada.',
       // Export to Word
-      'Export to Word': 'Ekspor ke Word'
+      'Export to Word': 'Ekspor ke Word',
+      'Ensure that all required dependent libraries are available for the plugin to work.': 'Pastikan semua pustaka dependen yang diperlukan tersedia agar plugin dapat berfungsi.',
+      // Import_from_word
+      'Import from Word': 'Impor dari Word',
+      'Please upload a valid file': 'Harap unggah berkas yang valid.',
+      'File size must be less than': 'Ukuran berkas harus kurang dari',
+      //Code Snippet
+      'Code Snippet': 'Kutipan Kode',
+      'Insert Code Snippet': 'Sisipkan Kutipan Kode',
+      'Edit Code Snippet': 'Edit Kutipan Kode',
+      'Font Awesome': 'Font Awesome',
+      'Web Application Icons': 'Ikon aplikasi web',
+      'Accessibility Icons': 'Ikon aksesibilitas',
+      'Hand Icons': 'Ikon tangan',
+      'Transportation Icons': 'Ikon transportasi',
+      'Gender Icons': 'Ikon gender',
+      'Form Control Icons': 'Ikon kontrol formulir',
+      'Payment Icons': 'Ikon pembayaran',
+      'Chart Icons': 'Ikon grafik',
+      'Currency Icons': 'Ikon mata uang',
+      'Text Editor Icons': 'Ikon editor teks',
+      'Brand Icons': 'Ikon merek',
+      'Default': 'Default',
+      'Lower Alpha': 'Huruf kecil (a, b, c)',
+      'Lower Greek': 'Huruf Yunani kecil',
+      'Lower Roman': 'Angka Romawi kecil',
+      'Upper Alpha': 'Huruf besar (A, B, C)',
+      'Upper Roman': 'Angka Romawi besar',
+      'Circle': 'Lingkaran',
+      'Disc': 'Lingkaran penuh',
+      'Square': 'Persegi',
+      'Line Height': 'Tinggi baris',
+      'Single': 'Tunggal',
+      'Double': 'Ganda',
+      'Insert File': 'Sisipkan file',
+      'Text Color': 'Warna teks',
+      'Background Color': 'Warna latar',
+      'Gray': 'Abu-abu',
+      'Spaced': 'Berjarak',
+      'Uppercase': 'Huruf besar',
+      'Rounded': 'Membulat',
+      'Bordered': 'Dengan batas',
+      'Shadow': 'Bayangan',
+      'Custom background colour input': 'Input warna latar kustom',
+      'Background colour picker': 'Pemilih warna latar',
+      'Custom border colour input': 'Input warna garis tepi kustom',
+      'Border colour picker': 'Pemilih warna garis tepi',
+      'Border colour': 'Warna garis tepi',
+      'Inline Class': 'Kelas inline',
+      'Download PDF': 'Unduh PDF',
+      'Dashed Borders': 'Garis tepi putus-putus',
+      'Alternate Rows': 'Baris selang-seling',
+      'Highlighted': 'Disorot',
+      'Thick': 'Tebal',
+      'Words': 'Kata',
+      'Insert Files': 'Sisipkan file',
+      'Image file type is invalid.': 'Jenis file gambar tidak valid.',
+      'File is too large.': 'File terlalu besar.',
+      'Alternate Text': 'Teks alternatif',
+      'Your browser does not support HTML5 vídeo.': 'Browser Anda tidak mendukung video HTML5.',
+      'Transparent': 'Transparan',
+      'Big Red': 'Merah besar',
+      'Small Blue': 'Biru kecil',
+      // AI Assist
+      'AI Shortcuts': 'Jalan pintas AI',
+      'Ask AI to generate or refine text, adjusting its tone and language.': 'Minta AI untuk menghasilkan atau menyempurnakan teks, menyesuaikan nada dan bahasanya.',
+      'Ask AI to generate': 'Minta AI untuk menghasilkan',
+      'AI responses can be inaccurate.': 'Respons AI bisa tidak akurat.',
+      'Select a text layer to edit': 'Pilih lapisan teks untuk diedit',
+      'Change Tone': 'Ubah Nada',
+      'Translate To': 'Terjemahkan Ke',
+      'Generating Response': 'Menghasilkan Respons',
+      'Submit': 'Kirim',
+      'Stop': 'Berhenti',
+      'Try again': 'Coba lagi',
+      // AI Terms Consent
+      'To use AI features in Froala, you need to accept the AI Supplemental Terms.': 'Untuk menggunakan fitur AI di Froala, Anda perlu menerima Persyaratan Tambahan AI.',
+      'Please set': 'Harap atur',
+      'to': 'ke',
+      'in your configuration to provide consent.': 'dalam konfigurasi Anda untuk memberikan persetujuan.',
+      'You can review the terms here:': 'Anda dapat meninjau persyaratan di sini:',
+      'View AI Supplemental Terms': 'Lihat Persyaratan Tambahan AI'
     },
     direction: 'ltr'
   };
 
-})));
+}));
 //# sourceMappingURL=id.js.map

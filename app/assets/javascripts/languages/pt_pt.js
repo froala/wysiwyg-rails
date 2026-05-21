@@ -1,20 +1,19 @@
 /*!
- * froala_editor v4.7.1 (https://www.froala.com/wysiwyg-editor)
+ * froala_editor v5.2.0 (https://www.froala.com/wysiwyg-editor)
  * License https://froala.com/wysiwyg-editor/terms/
- * Copyright 2014-2025 Froala Labs
+ * Copyright 2014-2026 Froala Labs
  */
 
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('froala-editor')) :
   typeof define === 'function' && define.amd ? define(['froala-editor'], factory) :
-  (factory(global.FroalaEditor));
-}(this, (function (FE) { 'use strict';
-
-  FE = FE && FE.hasOwnProperty('default') ? FE['default'] : FE;
+  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global.FroalaEditor));
+})(this, (function (FE) { 'use strict';
 
   /**
    * Portuguese spoken in Portugal
    */
+
   FE.LANGUAGE['pt_pt'] = {
     translation: {
       // Place holder
@@ -123,6 +122,7 @@
       'Something went wrong. Please try again.': 'Algo deu errado. Por favor, tente novamente.',
       'Image Caption': 'Legenda da imagem',
       'Advanced Edit': 'Edição avançada',
+      'Advanced Edit (File-Robot)': 'Edição avançada',
       // Video
       'Insert Video': "Inserir v\xEDdeo",
       'Embedded Code': "C\xF3digo embutido",
@@ -173,6 +173,16 @@
       'Left align': 'Alinhar à esquerda',
       'Center align': 'Centrar',
       'Right align': 'Alinhar à direita',
+      'Left align without wrap': 'Alinhar à esquerda sem quebra de linha',
+      'Right align without wrap': 'Alinhar à direita sem quebra de linha',
+      'solid': 'Linha contínua',
+      'dashed': 'Linha tracejada',
+      'dotted': 'Linha pontilhada',
+      'double': 'Duplo',
+      'groove': 'Linha sulcada',
+      'ridge': 'Linha saliente',
+      'inset': 'Linha interna',
+      'outset': 'Linha externa',
       // Files
       'Upload File': 'Upload de arquivo',
       'Drop file': 'Largar arquivo',
@@ -247,7 +257,6 @@
       'Clear Formatting': "Remover formata\xE7\xE3o",
       // Save
       'Save': "Salve",
-      'Ok': 'OK',
       // Undo, redo
       'Undo': 'Anular',
       'Redo': 'Restaurar',
@@ -337,10 +346,75 @@
       'Enter the anchor name without space': 'Introduza o nome da âncora sem espaços',
       'Anchor name already exists.': 'O nome da âncora já existe.',
       // Export to Word
-      'Export to Word': 'Exportar para o Word'
+      'Export to Word': 'Exportar para o Word',
+      'Ensure that all required dependent libraries are available for the plugin to work.': 'Certifique-se de que todas as bibliotecas dependentes necessárias estejam disponíveis para que o plugin funcione.',
+      // Import_from_word
+      'Import from Word': 'Importar do Word',
+      'Please upload a valid file': 'Por favor, carregue um ficheiro válido.',
+      'File size must be less than': 'O tamanho do ficheiro deve ser inferior a',
+      //Code Snippet
+      'Code Snippet': 'Fragmento de Código',
+      'Insert Code Snippet': 'Inserir Fragmento de Código',
+      'Edit Code Snippet': 'Editar Fragmento de Código',
+      'Font Awesome': 'Font Awesome',
+      'Web Application Icons': 'Ícones de aplicações web',
+      'Accessibility Icons': 'Ícones de acessibilidade',
+      'Hand Icons': 'Ícones de mãos',
+      'Transportation Icons': 'Ícones de transporte',
+      'Gender Icons': 'Ícones de género',
+      'Form Control Icons': 'Ícones de controlos de formulário',
+      'Payment Icons': 'Ícones de pagamento',
+      'Chart Icons': 'Ícones de gráficos',
+      'Currency Icons': 'Ícones de moeda',
+      'Text Editor Icons': 'Ícones do editor de texto',
+      'Brand Icons': 'Ícones de marcas',
+      'Line Height': 'Altura da linha',
+      'Insert File': 'Inserir ficheiro',
+      'Gray': 'Cinzento',
+      'Spaced': 'Espaçado',
+      'Uppercase': 'Maiúsculas',
+      'Rounded': 'Arredondado',
+      'Bordered': 'Com contorno',
+      'Shadow': 'Sombra',
+      'Custom background colour input': 'Entrada de cor de fundo personalizada',
+      'Background colour picker': 'Seletor de cor de fundo',
+      'Custom border colour input': 'Entrada de cor de contorno personalizada',
+      'Border colour picker': 'Seletor de cor de contorno',
+      'Border colour': 'Cor do contorno',
+      'Dashed Borders': 'Contornos tracejados',
+      'Alternate Rows': 'Linhas alternadas',
+      'Highlighted': 'Destacado',
+      'Thick': 'Espesso',
+      'Words': 'Palavras',
+      'Image file type is invalid.': 'O tipo de ficheiro de imagem é inválido.',
+      'File is too large.': 'O ficheiro é demasiado grande.',
+      'Alternate Text': 'Texto alternativo',
+      'Your browser does not support HTML5 vídeo.': 'O seu navegador não suporta vídeo HTML5.',
+      'Transparent': 'Transparente',
+      'Big Red': 'Vermelho grande',
+      'Small Blue': 'Azul pequeno',
+      // AI Assist
+      'AI Shortcuts': 'Atalhos de IA',
+      'Ask AI to generate or refine text, adjusting its tone and language.': 'Peça à IA para gerar ou refinar texto, ajustando o seu tom e idioma.',
+      'Ask AI to generate': 'Pedir à IA para gerar',
+      'AI responses can be inaccurate.': 'As respostas da IA podem ser imprecisas.',
+      'Select a text layer to edit': 'Selecione uma camada de texto para editar',
+      'Change Tone': 'Alterar Tom',
+      'Translate To': 'Traduzir Para',
+      'Generating Response': 'A Gerar Resposta',
+      'Submit': 'Submeter',
+      'Stop': 'Parar',
+      'Try again': 'Tentar novamente',
+      // AI Terms Consent
+      'To use AI features in Froala, you need to accept the AI Supplemental Terms.': 'Para utilizar as funcionalidades de IA no Froala, precisa de aceitar os Termos Suplementares de IA.',
+      'Please set': 'Por favor, defina',
+      'to': 'para',
+      'in your configuration to provide consent.': 'na sua configuração para fornecer consentimento.',
+      'You can review the terms here:': 'Pode rever os termos aqui:',
+      'View AI Supplemental Terms': 'Ver Termos Suplementares de IA'
     },
     direction: 'ltr'
   };
 
-})));
+}));
 //# sourceMappingURL=pt_pt.js.map

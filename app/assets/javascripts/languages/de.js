@@ -1,16 +1,14 @@
 /*!
- * froala_editor v4.7.1 (https://www.froala.com/wysiwyg-editor)
+ * froala_editor v5.2.0 (https://www.froala.com/wysiwyg-editor)
  * License https://froala.com/wysiwyg-editor/terms/
- * Copyright 2014-2025 Froala Labs
+ * Copyright 2014-2026 Froala Labs
  */
 
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('froala-editor')) :
   typeof define === 'function' && define.amd ? define(['froala-editor'], factory) :
-  (factory(global.FroalaEditor));
-}(this, (function (FE) { 'use strict';
-
-  FE = FE && FE.hasOwnProperty('default') ? FE['default'] : FE;
+  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global.FroalaEditor));
+})(this, (function (FE) { 'use strict';
 
   /**
    * German
@@ -134,6 +132,7 @@
       'Something went wrong. Please try again.': 'Etwas ist schief gelaufen. Bitte versuchen Sie es erneut.',
       'Image Caption': 'Bildbeschreibung',
       'Advanced Edit': 'Erweiterte Bearbeitung',
+      'Advanced Edit (File-Robot)': 'Erweiterte Bearbeitung',
       // Video
       'Insert Video': 'Video einfügen',
       'Embedded Code': 'Eingebetteter Code',
@@ -184,6 +183,16 @@
       'Left align': 'Linksbündig ausrichten',
       'Center align': 'Zentriert ausrichten',
       'Right align': 'Rechtsbündig ausrichten',
+      'Left align without wrap': 'Linksbündig ohne Textfluss',
+      'Right align without wrap': 'Rechtsbündig ohne Textfluss',
+      'solid': 'Durchgezogene Linie',
+      'dashed': 'Gestrichelte Linie',
+      'double': 'Doppelt',
+      'dotted': 'Gepunktete Linie',
+      'groove': 'Eingeschnittene Linie',
+      'ridge': 'Erhabene Linie',
+      'inset': 'Innere Linie',
+      'outset': 'Äußere Linie',
       // Files
       'Upload File': 'Datei hochladen',
       'Insert File': 'Datei einfügen',
@@ -350,10 +359,64 @@
       'Enter the anchor name without space': 'Geben Sie den Ankamen ohne Leertaste ein',
       'Anchor name already exists.': 'Der Ankername ist bereits vorhanden.',
       // Export to Word
-      'Export to Word': 'In Word exportieren'
+      'Export to Word': 'In Word exportieren',
+      'Ensure that all required dependent libraries are available for the plugin to work.': 'Stellen Sie sicher, dass alle erforderlichen abhängigen Bibliotheken für die Funktion des Plugins verfügbar sind.',
+      // Import_from_word
+      'Import from Word': 'Aus Word importieren',
+      'Please upload a valid file': 'Bitte laden Sie eine gültige Datei hoch.',
+      'File size must be less than': 'Die Dateigröße muss kleiner sein als',
+      //Code Snippet
+      'Code Snippet': 'Code-Snippet',
+      'Insert Code Snippet': 'Code-Snippet einfügen',
+      'Edit Code Snippet': 'Code-Snippet bearbeiten',
+      'Gray': 'Grau',
+      'Spaced': 'Mit Abstand',
+      'Uppercase': 'Großbuchstaben',
+      'Rounded': 'Abgerundet',
+      'Bordered': 'Mit Rahmen',
+      'Shadow': 'Schatten',
+      'Custom background colour input': 'Benutzerdefinierte Hintergrundfarbe',
+      'Background colour picker': 'Hintergrundfarbwähler',
+      'Custom border colour input': 'Benutzerdefinierte Rahmenfarbe',
+      'Border colour picker': 'Rahmenfarbwähler',
+      'Border colour': 'Rahmenfarbe',
+      'Inline Class': 'Inline-Klasse',
+      'Download PDF': 'PDF herunterladen',
+      'Dashed Borders': 'Gestrichelte Rahmen',
+      'Alternate Rows': 'Abwechselnde Zeilen',
+      'Highlighted': 'Hervorgehoben',
+      'Thick': 'Dick',
+      'Words': 'Wörter',
+      'Insert Files': 'Dateien einfügen',
+      'Image file type is invalid.': 'Der Bilddateityp ist ungültig.',
+      'File is too large.': 'Die Datei ist zu groß.',
+      'Alternate Text': 'Alternativtext',
+      'Your browser does not support HTML5 vídeo.': 'Ihr Browser unterstützt kein HTML5-Video.',
+      'Transparent': 'Transparent',
+      'Big Red': 'Groß Rot',
+      'Small Blue': 'Klein Blau',
+      // AI Assist
+      'AI Shortcuts': 'AI-Schnellbefehle',
+      'Ask AI to generate or refine text, adjusting its tone and language.': 'Bitten Sie die KI, Text zu generieren oder zu verfeinern und dabei Ton und Sprache anzupassen.',
+      'Ask AI to generate': 'KI zum Generieren auffordern',
+      'AI responses can be inaccurate.': 'KI-Antworten können ungenau sein.',
+      'Select a text layer to edit': 'Wählen Sie eine Textebene zum Bearbeiten aus',
+      'Change Tone': 'Ton Ändern',
+      'Translate To': 'Übersetzen Nach',
+      'Generating Response': 'Antwort Wird Generiert',
+      'Submit': 'Einreichen',
+      'Stop': 'Stoppen',
+      'Try again': 'Versuchen Sie es erneut',
+      // AI Terms Consent
+      'To use AI features in Froala, you need to accept the AI Supplemental Terms.': 'Um KI-Funktionen in Froala zu nutzen, müssen Sie den ergänzenden KI-Bedingungen zustimmen.',
+      'Please set': 'Bitte setzen Sie',
+      'to': 'auf',
+      'in your configuration to provide consent.': 'in Ihrer Konfiguration, um die Zustimmung zu erteilen.',
+      'You can review the terms here:': 'Sie können die Bedingungen hier einsehen:',
+      'View AI Supplemental Terms': 'Ergänzende KI-Bedingungen anzeigen'
     },
     direction: 'ltr'
   };
 
-})));
+}));
 //# sourceMappingURL=de.js.map

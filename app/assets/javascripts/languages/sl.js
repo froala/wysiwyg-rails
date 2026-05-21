@@ -1,16 +1,14 @@
 /*!
- * froala_editor v4.7.1 (https://www.froala.com/wysiwyg-editor)
+ * froala_editor v5.2.0 (https://www.froala.com/wysiwyg-editor)
  * License https://froala.com/wysiwyg-editor/terms/
- * Copyright 2014-2025 Froala Labs
+ * Copyright 2014-2026 Froala Labs
  */
 
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('froala-editor')) :
   typeof define === 'function' && define.amd ? define(['froala-editor'], factory) :
-  (factory(global.FroalaEditor));
-}(this, (function (FE) { 'use strict';
-
-  FE = FE && FE.hasOwnProperty('default') ? FE['default'] : FE;
+  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global.FroalaEditor));
+})(this, (function (FE) { 'use strict';
 
   /**
    * Slovenian
@@ -103,6 +101,7 @@
       'Something went wrong. Please try again.': 'Nekaj je šlo narobe. Prosimo, poskusite ponovno.',
       'Image Caption': 'Opis slike',
       'Advanced Edit': 'Napredno urejanje',
+      'Advanced Edit (File-Robot)': 'Napredno urejanje',
       // Video
       'Insert Video': 'Vstavi video posnetek',
       'Embedded Code': 'Vdelana koda',
@@ -153,6 +152,16 @@
       'Left align': 'Poravnaj levo',
       'Center align': 'Poravnaj sredino',
       'Right align': 'desno Poravnaj ',
+      'Left align without wrap': 'Levo poravnanje brez preloma',
+      'Right align without wrap': 'Desno poravnanje brez preloma',
+      'solid': 'Polna črta',
+      'dashed': 'Črtkana črta',
+      'dotted': 'Pikčasta črta',
+      'double': 'Dvojna črta',
+      'groove': 'Zarezana črta',
+      'ridge': 'Dvignjena črta',
+      'inset': 'Notranja črta',
+      'outset': 'Zunanja črta',
       // Files
       'Upload File': 'Naloži datoteko',
       'Drop file': 'Spustite datoteko sem',
@@ -171,7 +180,6 @@
       'Clear Formatting': 'Počisti oblikovanje',
       // Save
       'Save': 'Shrani',
-      'Ok': 'V redu',
       // Undo, redo
       'Undo': 'Razveljavi',
       'Redo': 'Ponovno uveljavi',
@@ -262,10 +270,151 @@
       'Enter the anchor name without space': 'Vnesite ime sidra brez presledkov',
       'Anchor name already exists.': 'Ime sidra že obstaja.',
       // Export to Word
-      'Export to Word': 'Izvozi v Word'
+      'Export to Word': 'Izvozi v Word',
+      'Ensure that all required dependent libraries are available for the plugin to work.': 'Zagotovite, da so vse zahtevane odvisne knjižnice na voljo za delovanje vtičnika.',
+      // Import_from_word
+      'Import from Word': 'Uvoz iz Worda',
+      'Please upload a valid file': 'Prosimo, naložite veljavno datoteko.',
+      'File size must be less than': 'Velikost datoteke mora biti manjša od',
+      //Code Snippet
+      'Code Snippet': 'Odlomek Kode',
+      'Insert Code Snippet': 'Vstavi odlomek kode',
+      'Edit Code Snippet': 'Uredi odlomek kode',
+      'Font Awesome': 'Font Awesome',
+      'Web Application Icons': 'Ikone veb aplikacija',
+      'Accessibility Icons': 'Ikone pristupačnosti',
+      'Hand Icons': 'Ikone ruku',
+      'Transportation Icons': 'Ikone transporta',
+      'Gender Icons': 'Ikone pola',
+      'Form Control Icons': 'Ikone kontrola formulara',
+      'Payment Icons': 'Ikone plaćanja',
+      'Chart Icons': 'Ikone grafikona',
+      'Currency Icons': 'Ikone valuta',
+      'Text Editor Icons': 'Ikone uređivača teksta',
+      'Brand Icons': 'Ikone brendova',
+      'Default': 'Podrazumevano',
+      'Lower Alpha': 'Mala slova (a, b, c)',
+      'Lower Greek': 'Mala grčka slova',
+      'Lower Roman': 'Mali rimski brojevi',
+      'Upper Alpha': 'Velika slova (A, B, C)',
+      'Upper Roman': 'Veliki rimski brojevi',
+      'Circle': 'Krug',
+      'Disc': 'Pun krug',
+      'Square': 'Kvadrat',
+      'Line Height': 'Visina reda',
+      'Single': 'Jednostruko',
+      'Double': 'dvojno',
+      'Insert File': 'Umetni fajl',
+      'Text Color': 'Boja teksta',
+      'Background Color': 'Boja pozadine',
+      'Alignment': 'Poravnava',
+      'Next': 'Naprej',
+      'Previous': 'Nazaj',
+      'Close': 'Zapri',
+      'Grinning face': 'Široko nasmejan obraz',
+      'Grinning face with smiling eyes': 'Široko nasmejan obraz z nasmejanimi očmi',
+      'Face with tears of joy': 'Obraz s solzami od smeha',
+      'Smiling face with open mouth': 'Nasmejan obraz z odprtimi usti',
+      'Smiling face with open mouth and smiling eyes': 'Nasmejan obraz z odprtimi usti in nasmejanimi očmi',
+      'Smiling face with open mouth and cold sweat': 'Nasmejan obraz z odprtimi usti in hladnim potom',
+      'Smiling face with open mouth and tightly-closed eyes': 'Nasmejan obraz z odprtimi usti in močno zaprtimi očmi',
+      'Smiling face with halo': 'Nasmejan obraz z avreolo',
+      'Smiling face with horns': 'Nasmejan obraz z rogovi',
+      'Winking face': 'Pomežikajoč obraz',
+      'Smiling face with smiling eyes': 'Nasmejan obraz z nasmejanimi očmi',
+      'Face savoring delicious food': 'Obraz, ki uživa v okusni hrani',
+      'Relieved face': 'Olajšan obraz',
+      'Smiling face with heart-shaped eyes': 'Nasmejan obraz z očmi v obliki srca',
+      'Smiling face with sunglasses': 'Nasmejan obraz s sončnimi očali',
+      'Smirking face': 'Samozadovoljen obraz',
+      'Neutral face': 'Nevtralen obraz',
+      'Expressionless face': 'Brezizrazen obraz',
+      'Unamused face': 'Nezadovoljen obraz',
+      'Face with cold sweat': 'Obraz s hladnim potom',
+      'Pensive face': 'Zamišljen obraz',
+      'Confused face': 'Zmeden obraz',
+      'Confounded face': 'Potrt obraz',
+      'Kissing face': 'Poljubljajoč obraz',
+      'Face throwing a kiss': 'Obraz, ki pošilja poljub',
+      'Kissing face with smiling eyes': 'Poljubljajoč obraz z nasmejanimi očmi',
+      'Kissing face with closed eyes': 'Poljubljajoč obraz z zaprtimi očmi',
+      'Face with stuck out tongue': 'Obraz z iztegnjenim jezikom',
+      'Face with stuck out tongue and winking eye': 'Obraz z iztegnjenim jezikom in pomežikom',
+      'Face with stuck out tongue and tightly-closed eyes': 'Obraz z iztegnjenim jezikom in močno zaprtimi očmi',
+      'Disappointed face': 'Razočaran obraz',
+      'Worried face': 'Zaskrbljen obraz',
+      'Angry face': 'Jezen obraz',
+      'Pouting face': 'Kujav obraz',
+      'Crying face': 'Jokajoč obraz',
+      'Persevering face': 'Vztrajen obraz',
+      'Face with look of triumph': 'Zmagoslaven obraz',
+      'Disappointed but relieved face': 'Razočaran, a olajšan obraz',
+      'Frowning face with open mouth': 'Namrščen obraz z odprtimi usti',
+      'Anguished face': 'Obupan obraz',
+      'Fearful face': 'Prestrašen obraz',
+      'Weary face': 'Utrujen obraz',
+      'Sleepy face': 'Zaspan obraz',
+      'Tired face': 'Izčrpan obraz',
+      'Grimacing face': 'Spačen obraz',
+      'Loudly crying face': 'Glasno jokajoč obraz',
+      'Face with open mouth': 'Obraz z odprtimi usti',
+      'Hushed face': 'Osupel obraz',
+      'Face with open mouth and cold sweat': 'Obraz z odprtimi usti in hladnim potom',
+      'Face screaming in fear': 'Kričeč obraz od strahu',
+      'Astonished face': 'Osupel obraz',
+      'Flushed face': 'Zardel obraz',
+      'Sleeping face': 'Speč obraz',
+      'Dizzy face': 'Omotičen obraz',
+      'Face without mouth': 'Obraz brez ust',
+      'Face with medical mask': 'Obraz z medicinsko masko',
+      'Gray': 'Siva',
+      'Spaced': 'Razmaknjeno',
+      'Uppercase': 'Velike črke',
+      'Rounded': 'Zaobljeno',
+      'Bordered': 'Obrobljeno',
+      'Shadow': 'Senca',
+      'Custom background colour input': 'Vnos barve ozadja po meri',
+      'Background colour picker': 'Izbirnik barve ozadja',
+      'Custom border colour input': 'Vnos barve obrobe po meri',
+      'Border colour picker': 'Izbirnik barve obrobe',
+      'Border colour': 'Barva obrobe',
+      'Inline Class': 'Vgrajeni razred',
+      'Download PDF': 'Prenesi PDF',
+      'Dashed Borders': 'Črtkane obrobe',
+      'Alternate Rows': 'Izmenične vrstice',
+      'Highlighted': 'Poudarjeno',
+      'Thick': 'Debelo',
+      'Words': 'Besede',
+      'Insert Files': 'Vstavi datoteke',
+      'Image file type is invalid.': 'Vrsta slikovne datoteke ni veljavna.',
+      'File is too large.': 'Datoteka je prevelika.',
+      'Alternate Text': 'Nadomestno besedilo',
+      'Your browser does not support HTML5 vídeo.': 'Vaš brskalnik ne podpira HTML5 videa.',
+      'Transparent': 'Prosojno',
+      'Big Red': 'Velika rdeča',
+      'Small Blue': 'Majhna modra',
+      // AI Assist
+      'AI Shortcuts': 'AI bližnjice',
+      'Ask AI to generate or refine text, adjusting its tone and language.': 'Prosite AI, da ustvari ali izboljša besedilo ter prilagodi njegov ton in jezik.',
+      'Ask AI to generate': 'Prositi AI, da ustvari',
+      'AI responses can be inaccurate.': 'Odgovori AI so lahko netočni.',
+      'Select a text layer to edit': 'Izberite besedilno plast za urejanje',
+      'Change Tone': 'Spremeni Ton',
+      'Translate To': 'Prevedi V',
+      'Generating Response': 'Ustvarjanje Odgovora',
+      'Submit': 'Pošlji',
+      'Stop': 'Ustavi',
+      'Try again': 'Poskusi znova',
+      // AI Terms Consent
+      'To use AI features in Froala, you need to accept the AI Supplemental Terms.': 'Za uporabo funkcij umetne inteligence v Froali morate sprejeti Dopolnilne pogoje umetne inteligence.',
+      'Please set': 'Nastavite',
+      'to': 'na',
+      'in your configuration to provide consent.': 'v svoji konfiguraciji za privolitev.',
+      'You can review the terms here:': 'Pogoje si lahko ogledate tukaj:',
+      'View AI Supplemental Terms': 'Oglejte si Dopolnilne pogoje umetne inteligence'
     },
     direction: 'ltr'
   };
 
-})));
+}));
 //# sourceMappingURL=sl.js.map

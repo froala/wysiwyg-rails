@@ -1,20 +1,19 @@
 /*!
- * froala_editor v4.7.1 (https://www.froala.com/wysiwyg-editor)
+ * froala_editor v5.2.0 (https://www.froala.com/wysiwyg-editor)
  * License https://froala.com/wysiwyg-editor/terms/
- * Copyright 2014-2025 Froala Labs
+ * Copyright 2014-2026 Froala Labs
  */
 
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('froala-editor')) :
   typeof define === 'function' && define.amd ? define(['froala-editor'], factory) :
-  (factory(global.FroalaEditor));
-}(this, (function (FE) { 'use strict';
-
-  FE = FE && FE.hasOwnProperty('default') ? FE['default'] : FE;
+  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global.FroalaEditor));
+})(this, (function (FE) { 'use strict';
 
   /**
    * Serbian (Latin)
    */
+
   FE.LANGUAGE['sr'] = {
     translation: {
       // Place holder
@@ -106,6 +105,7 @@
       'Something went wrong. Please try again.': "Ne\u0161to krenulo naopako. Poku\u0161ajte ponovo.",
       'Image Caption': 'Slika natpisa',
       'Advanced Edit': 'Napredno uređivanje',
+      'Advanced Edit (File-Robot)': 'Napredno uređivanje',
       // Video
       'Insert Video': 'Umetanje video',
       'Embedded Code': "Ugra\u0111eni k\xF4d",
@@ -156,6 +156,16 @@
       'Left align': 'Poravnaj levo',
       'Center align': 'Poravnaj na sredinu',
       'Right align': 'Poravnaj desno',
+      'Left align without wrap': 'Poravnaj levo bez prelamanja',
+      'Right align without wrap': 'Poravnaj desno bez prelamanja',
+      'solid': 'Puna linija',
+      'dashed': 'Isprekidana linija',
+      'dotted': 'Tačkasta linija',
+      'double': 'Dvostruka linija',
+      'groove': 'Urezana linija',
+      'ridge': 'Izdignuta linija',
+      'inset': 'Unutrašnja linija',
+      'outset': 'Spoljašnja linija',
       // Files
       'Upload File': 'Otpremanje datoteke',
       'Drop file': 'Baci datoteku',
@@ -230,7 +240,6 @@
       'Clear Formatting': 'Brisanje oblikovanja',
       // Save
       'Save': "\u0441\u0430\u0447\u0443\u0432\u0430\u0442\u0438",
-      'Ok': 'U redu',
       // Undo, redo
       'Undo': 'Opozovi radnju',
       'Redo': 'Ponavljanje',
@@ -320,10 +329,91 @@
       'Enter the anchor name without space': 'Unesite naziv sidra bez razmaka',
       'Anchor name already exists.': 'Naziv sidra već postoji.',
       // Export to Word
-      'Export to Word': 'Izvezi u Word'
+      'Export to Word': 'Izvezi u Word',
+      'Ensure that all required dependent libraries are available for the plugin to work.': 'Obezbedite da su sve potrebne zavisne biblioteke dostupne da bi dodatak radio.',
+      // Import_from_word
+      'Import from Word': 'Uvoz iz Worda',
+      'Please upload a valid file': 'Molimo Vas da otpremite važeću datoteku.',
+      'File size must be less than': 'Veličina datoteke mora biti manja od',
+      //Code Snippet
+      'Code Snippet': 'Исечак кода',
+      'Insert Code Snippet': 'Уметни исечак кода',
+      'Edit Code Snippet': 'Уреди исечак кода',
+      'Font Awesome': 'Font Awesome',
+      'Web Application Icons': 'Ikone web aplikacija',
+      'Accessibility Icons': 'Ikone pristupačnosti',
+      'Hand Icons': 'Ikone ruku',
+      'Transportation Icons': 'Ikone transporta',
+      'Gender Icons': 'Ikone pola',
+      'Form Control Icons': 'Ikone kontrola obrasca',
+      'Payment Icons': 'Ikone plaćanja',
+      'Chart Icons': 'Ikone grafikona',
+      'Currency Icons': 'Ikone valuta',
+      'Text Editor Icons': 'Ikone uređivača teksta',
+      'Brand Icons': 'Ikone brendova',
+      'Default': 'Podrazumevano',
+      'Lower Alpha': 'Mala slova (a, b, c)',
+      'Lower Greek': 'Mala grčka slova',
+      'Lower Roman': 'Mali rimski brojevi',
+      'Upper Alpha': 'Velika slova (A, B, C)',
+      'Upper Roman': 'Veliki rimski brojevi',
+      'Circle': 'Krug',
+      'Disc': 'Popunjen krug',
+      'Square': 'Kvadrat',
+      'Line Height': 'Visina reda',
+      'Single': 'Jednostruko',
+      'Double': 'dvostruko',
+      'Insert File': 'Umetni fajl',
+      'Text Color': 'Boja teksta',
+      'Background Color': 'Boja pozadine',
+      'Gray': 'Siva',
+      'Spaced': 'Razmaknuto',
+      'Uppercase': 'Velika slova',
+      'Rounded': 'Zaobljeno',
+      'Bordered': 'Sa ivicom',
+      'Shadow': 'Senka',
+      'Custom background colour input': 'Prilagođeni unos boje pozadine',
+      'Background colour picker': 'Birač boje pozadine',
+      'Custom border colour input': 'Prilagođeni unos boje ivice',
+      'Border colour picker': 'Birač boje ivice',
+      'Border colour': 'Boja ivice',
+      'Inline Class': 'Inline klasa',
+      'Download PDF': 'Preuzmi PDF',
+      'Dashed Borders': 'Isprekidane ivice',
+      'Alternate Rows': 'Naizmenični redovi',
+      'Highlighted': 'Istaknuto',
+      'Thick': 'Debelo',
+      'Words': 'Reči',
+      'Insert Files': 'Umetni datoteke',
+      'Image file type is invalid.': 'Tip slike nije ispravan.',
+      'File is too large.': 'Datoteka je prevelika.',
+      'Alternate Text': 'Alternativni tekst',
+      'Your browser does not support HTML5 vídeo.': 'Vaš pregledač ne podržava HTML5 video.',
+      'Transparent': 'Providno',
+      'Big Red': 'Veliko crveno',
+      'Small Blue': 'Malo plavo',
+      // AI Assist
+      'AI Shortcuts': 'АИ Пречице',
+      'Ask AI to generate or refine text, adjusting its tone and language.': 'Затражите од АИ да генерише или побољша текст, прилагођавајући његов тон и језик.',
+      'Ask AI to generate': 'Затражити од АИ да генерише',
+      'AI responses can be inaccurate.': 'Одговори АИ могу бити нетачни.',
+      'Select a text layer to edit': 'Изаберите слој текста за уређивање',
+      'Change Tone': 'Промени Тон',
+      'Translate To': 'Преведи На',
+      'Generating Response': 'Генерисање Одговора',
+      'Submit': 'Поднети',
+      'Stop': 'Заустави',
+      'Try again': 'Покушај поново',
+      // AI Terms Consent
+      'To use AI features in Froala, you need to accept the AI Supplemental Terms.': 'Да бисте користили АИ функције у Froala, морате прихватити Допунске услове за AИ.',
+      'Please set': 'Поставите',
+      'to': 'на',
+      'in your configuration to provide consent.': 'у својој конфигурацији да бисте дали сагласност.',
+      'You can review the terms here:': 'Услове можете прегледати овде:',
+      'View AI Supplemental Terms': 'Прикажите Допунске услове за АИ'
     },
     direction: 'ltr'
   };
 
-})));
+}));
 //# sourceMappingURL=sr.js.map

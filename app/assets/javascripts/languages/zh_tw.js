@@ -1,20 +1,19 @@
 /*!
- * froala_editor v4.7.1 (https://www.froala.com/wysiwyg-editor)
+ * froala_editor v5.2.0 (https://www.froala.com/wysiwyg-editor)
  * License https://froala.com/wysiwyg-editor/terms/
- * Copyright 2014-2025 Froala Labs
+ * Copyright 2014-2026 Froala Labs
  */
 
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('froala-editor')) :
   typeof define === 'function' && define.amd ? define(['froala-editor'], factory) :
-  (factory(global.FroalaEditor));
-}(this, (function (FE) { 'use strict';
-
-  FE = FE && FE.hasOwnProperty('default') ? FE['default'] : FE;
+  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global.FroalaEditor));
+})(this, (function (FE) { 'use strict';
 
   /**
    * Traditional Chinese spoken in Taiwan.
    */
+
   FE.LANGUAGE['zh_tw'] = {
     translation: {
       // Place holder
@@ -106,6 +105,7 @@
       'Something went wrong. Please try again.': '發生錯誤，請重試。',
       'Image Caption': '圖片標題',
       'Advanced Edit': '高級編輯',
+      'Advanced Edit (File-Robot)': '高級編輯',
       // Video
       'Insert Video': '插入影片',
       'Embedded Code': '嵌入式代码',
@@ -156,6 +156,16 @@
       'Left align': '靠左對齊',
       'Center align': '置中對齊',
       'Right align': '靠右對齊',
+      'Left align without wrap': '靠左對齊不換行',
+      'Right align without wrap': '靠右對齊不換行',
+      'solid': '實線',
+      'dashed': '虛線',
+      'dotted': '點線',
+      'double': '雙線',
+      'groove': '凹槽線',
+      'ridge': '凸起線',
+      'inset': '內邊線',
+      'outset': '外邊線',
       // Files
       'Upload File': '上傳文件',
       'Drop file': '拖入文件',
@@ -230,7 +240,6 @@
       'Clear Formatting': '清除格式',
       // Save
       'Save': '保存',
-      'Ok': '確定',
       // Undo, redo
       'Undo': '撤消',
       'Redo': '重做',
@@ -320,10 +329,91 @@
       'Enter the anchor name without space': '請輸入不含空格的錨點名稱',
       'Anchor name already exists.': '錨點名稱已存在。',
       // Export to Word
-      'Export to Word': '匯出至 Word'
+      'Export to Word': '匯出至 Word',
+      'Ensure that all required dependent libraries are available for the plugin to work.': '確保所有必需的相依函式庫都可用，以使外掛程式能夠正常運作。',
+      // Import_from_word
+      'Import from Word': '從 Word 匯入',
+      'Please upload a valid file': '請上傳有效檔案。',
+      'File size must be less than': '檔案大小必須小於',
+      //Code Snippet
+      'Code Snippet': '程式碼片段',
+      'Insert Code Snippet': '插入程式碼片段',
+      'Edit Code Snippet': '編輯程式碼片段',
+      'Font Awesome': 'Font Awesome',
+      'Web Application Icons': '網頁應用程式圖示',
+      'Accessibility Icons': '無障礙圖示',
+      'Hand Icons': '手勢圖示',
+      'Transportation Icons': '交通工具圖示',
+      'Gender Icons': '性別圖示',
+      'Form Control Icons': '表單控制項圖示',
+      'Payment Icons': '付款圖示',
+      'Chart Icons': '圖表圖示',
+      'Currency Icons': '貨幣圖示',
+      'Text Editor Icons': '文字編輯器圖示',
+      'Brand Icons': '品牌圖示',
+      'Default': '預設',
+      'Lower Alpha': '小寫字母 (a, b, c)',
+      'Lower Greek': '小寫希臘字母',
+      'Lower Roman': '小寫羅馬數字',
+      'Upper Alpha': '大寫字母 (A, B, C)',
+      'Upper Roman': '大寫羅馬數字',
+      'Circle': '圓形',
+      'Disc': '實心圓',
+      'Square': '方形',
+      'Line Height': '行高',
+      'Single': '單行',
+      'Double': '雙行',
+      'Insert File': '插入檔案',
+      'Text Color': '文字顏色',
+      'Background Color': '背景顏色',
+      'Gray': '灰色',
+      'Spaced': '加大間距',
+      'Uppercase': '大寫',
+      'Rounded': '圓角',
+      'Bordered': '含邊框',
+      'Shadow': '陰影',
+      'Custom background colour input': '自訂背景顏色輸入',
+      'Background colour picker': '背景顏色選擇器',
+      'Custom border colour input': '自訂邊框顏色輸入',
+      'Border colour picker': '邊框顏色選擇器',
+      'Border colour': '邊框顏色',
+      'Inline Class': '內嵌類別',
+      'Download PDF': '下載 PDF',
+      'Dashed Borders': '虛線邊框',
+      'Alternate Rows': '交錯列',
+      'Highlighted': '已高亮',
+      'Thick': '粗體',
+      'Words': '字數',
+      'Insert Files': '插入檔案',
+      'Image file type is invalid.': '圖片檔案類型無效。',
+      'File is too large.': '檔案過大。',
+      'Alternate Text': '替代文字',
+      'Your browser does not support HTML5 vídeo.': '您的瀏覽器不支援 HTML5 影片。',
+      'Transparent': '透明',
+      'Big Red': '大紅色',
+      'Small Blue': '小藍色',
+      // AI Assist
+      'AI Shortcuts': 'AI 快捷方式',
+      'Ask AI to generate or refine text, adjusting its tone and language.': '要求AI生成或完善文字，調整其語氣和語言。',
+      'Ask AI to generate': '要求AI生成',
+      'AI responses can be inaccurate.': 'AI回應可能不準確。',
+      'Select a text layer to edit': '選擇要編輯的文字圖層',
+      'Change Tone': '更改語氣',
+      'Translate To': '翻譯為',
+      'Generating Response': '正在生成回應',
+      'Submit': '提交',
+      'Stop': '停止',
+      'Try again': '重試',
+      // AI Terms Consent
+      'To use AI features in Froala, you need to accept the AI Supplemental Terms.': '要在 Froala 中使用 AI 功能，您需要接受 AI 補充條款。',
+      'Please set': '請將',
+      'to': '設定為',
+      'in your configuration to provide consent.': '在您的設定中以提供同意。',
+      'You can review the terms here:': '您可以在此處查看條款：',
+      'View AI Supplemental Terms': '查看 AI 補充條款'
     },
     direction: 'ltr'
   };
 
-})));
+}));
 //# sourceMappingURL=zh_tw.js.map

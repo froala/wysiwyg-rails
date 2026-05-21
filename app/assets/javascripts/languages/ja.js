@@ -1,20 +1,19 @@
 /*!
- * froala_editor v4.7.1 (https://www.froala.com/wysiwyg-editor)
+ * froala_editor v5.2.0 (https://www.froala.com/wysiwyg-editor)
  * License https://froala.com/wysiwyg-editor/terms/
- * Copyright 2014-2025 Froala Labs
+ * Copyright 2014-2026 Froala Labs
  */
 
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('froala-editor')) :
   typeof define === 'function' && define.amd ? define(['froala-editor'], factory) :
-  (factory(global.FroalaEditor));
-}(this, (function (FE) { 'use strict';
-
-  FE = FE && FE.hasOwnProperty('default') ? FE['default'] : FE;
+  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global.FroalaEditor));
+})(this, (function (FE) { 'use strict';
 
   /**
    * Japanese
    */
+
   FE.LANGUAGE['ja'] = {
     translation: {
       // Place holder
@@ -106,6 +105,7 @@
       'Something went wrong. Please try again.': "\u554F\u984C\u304C\u767A\u751F\u3057\u307E\u3057\u305F\u3002\u3082\u3046\u4E00\u5EA6\u3084\u308A\u76F4\u3057\u3066\u304F\u3060\u3055\u3044\u3002",
       'Image Caption': "\u753B\u50CF\u30AD\u30E3\u30D7\u30B7\u30E7\u30F3",
       'Advanced Edit': "\u9AD8\u5EA6\u306A\u7DE8\u96C6",
+      'Advanced Edit (File-Robot)': "\u9AD8\u5EA6\u306A\u7DE8\u96C6",
       // Video
       'Insert Video': "\u52D5\u753B\u306E\u633F\u5165",
       'Embedded Code': "\u57CB\u3081\u8FBC\u307F\u30B3\u30FC\u30C9",
@@ -156,6 +156,16 @@
       'Left align': '左揃え',
       'Center align': '中央揃え',
       'Right align': '右揃え',
+      'Left align without wrap': '折り返しなしで左揃え',
+      'Right align without wrap': '折り返しなしで右揃え',
+      'solid': '実線',
+      'dashed': '破線',
+      'dotted': '点線',
+      'double': '二重線',
+      'groove': '溝線',
+      'ridge': '隆起線',
+      'inset': '内側の線',
+      'outset': '外側の線',
       // Files
       'Upload File': "\u30D5\u30A1\u30A4\u30EB\u306E\u30A2\u30C3\u30D7\u30ED\u30FC\u30C9",
       'Drop file': "\u30D5\u30A1\u30A4\u30EB\u3092\u30C9\u30E9\u30C3\u30B0&\u30C9\u30ED\u30C3\u30D7",
@@ -230,7 +240,6 @@
       'Clear Formatting': "\u66F8\u5F0F\u306E\u30AF\u30EA\u30A2",
       // Save
       'Save': "\u30BB\u30FC\u30D6",
-      'Ok': 'OK',
       // Undo, redo
       'Undo': "\u5143\u306B\u623B\u3059",
       'Redo': "\u3084\u308A\u76F4\u3059",
@@ -324,10 +333,88 @@
       'Enter the anchor name without space': 'スペースを入れずにアンカー名を入力してください',
       'Anchor name already exists.': 'アンカー名はすでに存在します。',
       //export to word
-      'Export to Word': 'Wordにエクスポート'
+      'Export to Word': 'Wordにエクスポート',
+      'Ensure that all required dependent libraries are available for the plugin to work.': 'プラグインが機能するために必要なすべての依存ライブラリが利用可能であることを確認してください。',
+      // Import_from_word
+      'Import from Word': 'Wordからインポート',
+      'Please upload a valid file': '有効なファイルをアップロードしてください。',
+      'File size must be less than': 'ファイルサイズは以下である必要があります',
+      //Code Snippet
+      'Code Snippet': 'コードスニペット',
+      'Insert Code Snippet': 'コードスニペットを挿入',
+      'Edit Code Snippet': 'コードスニペットを編集',
+      'Font Awesome': 'Font Awesome',
+      'Web Application Icons': 'Webアプリケーションのアイコン',
+      'Accessibility Icons': 'アクセシビリティアイコン',
+      'Hand Icons': '手のアイコン',
+      'Transportation Icons': '交通アイコン',
+      'Gender Icons': '性別アイコン',
+      'Form Control Icons': 'フォームコントロールのアイコン',
+      'Payment Icons': '支払いアイコン',
+      'Chart Icons': 'チャートアイコン',
+      'Currency Icons': '通貨アイコン',
+      'Text Editor Icons': 'テキストエディターのアイコン',
+      'Brand Icons': 'ブランドアイコン',
+      'Default': 'デフォルト',
+      'Lower Alpha': '小文字アルファベット',
+      'Lower Greek': '小文字ギリシャ文字',
+      'Lower Roman': '小文字ローマ数字',
+      'Upper Alpha': '大文字アルファベット',
+      'Upper Roman': '大文字ローマ数字',
+      'Circle': '円',
+      'Disc': '塗りつぶし円',
+      'Square': '四角',
+      'Single': '単一',
+      'Double': '二重',
+      'Insert File': 'ファイルを挿入',
+      'Gray': 'グレー',
+      'Spaced': '間隔あり',
+      'Uppercase': '大文字',
+      'Rounded': '角丸',
+      'Bordered': '枠線あり',
+      'Shadow': '影',
+      'Custom background colour input': 'カスタム背景色入力',
+      'Background colour picker': '背景色ピッカー',
+      'Custom border colour input': 'カスタム枠線色入力',
+      'Border colour picker': '枠線色ピッカー',
+      'Border colour': '枠線の色',
+      'Inline Class': 'インラインクラス',
+      'Download PDF': 'PDFをダウンロード',
+      'Dashed Borders': '破線の枠線',
+      'Alternate Rows': '交互の行',
+      'Highlighted': '強調表示',
+      'Thick': '太い',
+      'Words': '単語数',
+      'Insert Files': 'ファイルを挿入',
+      'Image file type is invalid.': '画像ファイルの種類が無効です。',
+      'File is too large.': 'ファイルが大きすぎます。',
+      'Alternate Text': '代替テキスト',
+      'Your browser does not support HTML5 vídeo.': 'お使いのブラウザはHTML5動画をサポートしていません。',
+      'Transparent': '透明',
+      'Big Red': '大きい赤',
+      'Small Blue': '小さい青',
+      // AI Assist
+      'AI Shortcuts': 'AIショートカット',
+      'Ask AI to generate or refine text, adjusting its tone and language.': 'AIにテキストを生成または洗練させ、トーンと言語を調整するよう依頼します。',
+      'Ask AI to generate': 'AIに生成を依頼',
+      'AI responses can be inaccurate.': 'AIの応答は不正確な場合があります。',
+      'Select a text layer to edit': '編集するテキストレイヤーを選択',
+      'Change Tone': 'トーンを変更',
+      'Translate To': '翻訳先',
+      'Generating Response': '応答を生成中',
+      'Submit': '送信',
+      'Stop': '停止',
+      'Try again': 'もう一度試す',
+      // AI Terms Consent
+      'To use AI features in Froala, you need to accept the AI Supplemental Terms.': 'FroalaのAI機能を使用するには、AI補足規約に同意する必要があります。',
+      'Please set': '設定で',
+      'to': 'に',
+      'in your configuration to provide consent.': 'を設定して同意を提供してください。',
+      'You can review the terms here:': 'こちらで規約を確認できます：',
+      'View AI Supplemental Terms': 'AI補足規約を表示'
     },
     direction: 'ltr'
   };
 
-})));
+}));
 //# sourceMappingURL=ja.js.map

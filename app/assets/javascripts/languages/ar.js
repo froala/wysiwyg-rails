@@ -1,20 +1,19 @@
 /*!
- * froala_editor v4.7.1 (https://www.froala.com/wysiwyg-editor)
+ * froala_editor v5.2.0 (https://www.froala.com/wysiwyg-editor)
  * License https://froala.com/wysiwyg-editor/terms/
- * Copyright 2014-2025 Froala Labs
+ * Copyright 2014-2026 Froala Labs
  */
 
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('froala-editor')) :
   typeof define === 'function' && define.amd ? define(['froala-editor'], factory) :
-  (factory(global.FroalaEditor));
-}(this, (function (FE) { 'use strict';
-
-  FE = FE && FE.hasOwnProperty('default') ? FE['default'] : FE;
+  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global.FroalaEditor));
+})(this, (function (FE) { 'use strict';
 
   /**
    * Arabic
    */
+
   FE.LANGUAGE['ar'] = {
     translation: {
       // Place holder
@@ -119,6 +118,7 @@
       'Something went wrong. Please try again.': ".\u062D\u062F\u062B \u062E\u0637\u0623 \u0645\u0627. \u062D\u0627\u0648\u0644 \u0645\u0631\u0629 \u0627\u062E\u0631\u0649",
       'Image Caption': 'تعليق على الصورة',
       'Advanced Edit': 'تعديل متقدم',
+      'Advanced Edit (File-Robot)': 'تعديل متقدم',
       // Video
       'Insert Video': "\u0625\u062F\u0631\u0627\u062C \u0641\u064A\u062F\u064A\u0648",
       'Embedded Code': "\u0627\u0644\u062A\u0639\u0644\u064A\u0645\u0627\u062A \u0627\u0644\u0628\u0631\u0645\u062C\u064A\u0629 \u0627\u0644\u0645\u0636\u0645\u0646\u0629",
@@ -169,6 +169,16 @@
       'Left align': 'محاذاة لليسار',
       'Center align': 'محاذاة للوسط',
       'Right align': 'محاذاة إلى اليمين',
+      'Left align without wrap': 'محاذاة لليسار بدون التفاف',
+      'Right align without wrap': 'محاذاة لليمين بدون التفاف',
+      'solid': 'صلب',
+      'dashed': 'متقطع',
+      'dotted': 'منقط',
+      'double': 'مزدوج',
+      'groove': 'محفور',
+      'ridge': 'بارز',
+      'inset': 'داخلي',
+      'outset': 'خارجي',
       // Files
       'Upload File': "\u062A\u062D\u0645\u064A\u0644 \u0627\u0644\u0645\u0644\u0641",
       'Drop file': "\u0627\u0646\u062E\u0641\u0627\u0636 \u0627\u0644\u0645\u0644\u0641",
@@ -332,10 +342,79 @@
       'Drag PageBreak': 'اسحب فاصل الصفحة',
       'Page Break': 'فاصل الصفحة',
       //Export to Word
-      'Export to Word': 'تصدير إلى كلمة'
+      'Export to Word': 'تصدير إلى كلمة',
+      'Ensure that all required dependent libraries are available for the plugin to work.': 'تأكد من توفر جميع المكتبات التابعة المطلوبة لعمل المكون الإضافي.',
+      // import from Word
+      'Import from Word': 'الاستيراد من وورد',
+      'Please upload a valid file': 'الرجاء تحميل ملف صالح.',
+      'File size must be less than': 'يجب أن يكون حجم الملف أقل من',
+      //Code Snippet
+      'Code Snippet': 'قصاصة برمجية',
+      'Insert Code Snippet': 'إدراج قصاصة برمجية',
+      'Edit Code Snippet': 'تعديل قصاصة برمجية',
+      'Font Awesome': 'فونت أوسوم',
+      'Web Application Icons': 'أيقونات تطبيقات الويب',
+      'Accessibility Icons': 'أيقونات إمكانية الوصول',
+      'Hand Icons': 'أيقونات اليد',
+      'Transportation Icons': 'أيقونات النقل',
+      'Gender Icons': 'أيقونات النوع',
+      'Form Control Icons': 'أيقونات عناصر النماذج',
+      'Payment Icons': 'أيقونات الدفع',
+      'Chart Icons': 'أيقونات الرسوم البيانية',
+      'Currency Icons': 'أيقونات العملات',
+      'Text Editor Icons': 'أيقونات محرر النصوص',
+      'Brand Icons': 'أيقونات العلامات التجارية',
+      'Insert File': 'إدراج ملف',
+      'Text Color': 'لون النص',
+      'Background Color': 'لون الخلفية',
+      'Gray': 'رمادي',
+      'Spaced': 'متباعد',
+      'Uppercase': 'أحرف كبيرة',
+      'Rounded': 'مستدير',
+      'Bordered': 'بحدود',
+      'Shadow': 'ظل',
+      'Custom background colour input': 'إدخال لون خلفية مخصص',
+      'Background colour picker': 'منتقي لون الخلفية',
+      'Custom border colour input': 'إدخال لون حدود مخصص',
+      'Border colour picker': 'منتقي لون الحدود',
+      'Border colour': 'لون الحدود',
+      'Inline Class': 'فئة مضمنة',
+      'Download PDF': 'تنزيل PDF',
+      'Dashed Borders': 'حدود متقطعة',
+      'Alternate Rows': 'صفوف متناوبة',
+      'Highlighted': 'مميز',
+      'Thick': 'سميك',
+      'Words': 'كلمات',
+      'Insert Files': 'إدراج ملفات',
+      'Image file type is invalid.': 'نوع ملف الصورة غير صالح.',
+      'File is too large.': 'الملف كبير جدًا.',
+      'Alternate Text': 'نص بديل',
+      'Your browser does not support HTML5 vídeo.': 'متصفحك لا يدعم فيديو HTML5.',
+      'Transparent': 'شفاف',
+      'Big Red': 'أحمر كبير',
+      'Small Blue': 'أزرق صغير',
+      // AI Assist
+      'AI Shortcuts': 'اختصارات الذكاء الاصطناعي',
+      'Ask AI to generate or refine text, adjusting its tone and language.': 'اطلب من الذكاء الاصطناعي إنشاء النص أو تحسينه مع ضبط نبرته ولغته.',
+      'Ask AI to generate': 'اطلب من الذكاء الاصطناعي الإنشاء',
+      'AI responses can be inaccurate.': 'قد تكون استجابات الذكاء الاصطناعي غير دقيقة.',
+      'Select a text layer to edit': 'حدد طبقة نص للتحرير',
+      'Change Tone': 'تغيير النبرة',
+      'Translate To': 'ترجمة إلى',
+      'Generating Response': 'إنشاء الاستجابة',
+      'Submit': 'إرسال',
+      'Stop': 'توقف',
+      'Try again': 'حاول مرة أخرى',
+      // AI Terms Consent
+      'To use AI features in Froala, you need to accept the AI Supplemental Terms.': 'لاستخدام ميزات الذكاء الاصطناعي في Froala، يجب عليك قبول الشروط التكميلية للذكاء الاصطناعي.',
+      'Please set': 'يرجى تعيين',
+      'to': 'إلى',
+      'in your configuration to provide consent.': 'في التكوين الخاص بك لتوفير الموافقة.',
+      'You can review the terms here:': 'يمكنك مراجعة الشروط هنا:',
+      'View AI Supplemental Terms': 'عرض الشروط التكميلية للذكاء الاصطناعي'
     },
     direction: 'rtl'
   };
 
-})));
+}));
 //# sourceMappingURL=ar.js.map

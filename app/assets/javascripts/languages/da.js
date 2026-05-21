@@ -1,20 +1,19 @@
 /*!
- * froala_editor v4.7.1 (https://www.froala.com/wysiwyg-editor)
+ * froala_editor v5.2.0 (https://www.froala.com/wysiwyg-editor)
  * License https://froala.com/wysiwyg-editor/terms/
- * Copyright 2014-2025 Froala Labs
+ * Copyright 2014-2026 Froala Labs
  */
 
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('froala-editor')) :
   typeof define === 'function' && define.amd ? define(['froala-editor'], factory) :
-  (factory(global.FroalaEditor));
-}(this, (function (FE) { 'use strict';
-
-  FE = FE && FE.hasOwnProperty('default') ? FE['default'] : FE;
+  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global.FroalaEditor));
+})(this, (function (FE) { 'use strict';
 
   /**
    * Danish
    */
+
   FE.LANGUAGE['da'] = {
     translation: {
       // Place holder
@@ -106,6 +105,7 @@
       'Something went wrong. Please try again.': 'Noget gik galt. Prøv igen.',
       'Image Caption': 'Billedtekst',
       'Advanced Edit': 'Avanceret redigering',
+      'Advanced Edit (File-Robot)': 'Avanceret redigering',
       // Video
       'Insert Video': 'Indsæt video',
       'Embedded Code': 'Indlejret kode',
@@ -156,6 +156,16 @@
       'Left align': 'Venstrejusteret',
       'Center align': 'Centerjuster',
       'Right align': 'Højrejuster',
+      'Left align without wrap': 'Venstrejuster uden ombrydning',
+      'Right align without wrap': 'Højrejuster uden ombrydning',
+      'solid': 'Fuldt optrukket linje',
+      'dashed': 'Stiplet linje',
+      'dotted': 'Prikket linje',
+      'double': 'Dobbelt linje',
+      'groove': 'Indskåret linje',
+      'ridge': 'Hævet linje',
+      'inset': 'Indvendig linje',
+      'outset': 'Udvendig linje',
       // Files
       'Upload File': 'Upload fil',
       'Drop file': 'Træk filen herind',
@@ -317,10 +327,92 @@
       'Drag PageBreak': 'Træk sideskift',
       'Page Break': 'Sideskift',
       //Export to Word
-      'Export to Word': 'Eksporter til Word'
+      'Export to Word': 'Eksporter til Word',
+      'Ensure that all required dependent libraries are available for the plugin to work.': 'Sørg for, at alle nødvendige afhængige biblioteker er tilgængelige, for at pluginnet kan fungere.',
+      // Import_from_word
+      'Import from Word': 'Importér fra Word',
+      'Please upload a valid file': 'Upload venligst en gyldig fil.',
+      'File size must be less than': 'Filstørrelsen skal være mindre end',
+      //Code Snippet
+      'Code Snippet': 'Kodeuddrag',
+      'Insert Code Snippet': 'Indsæt kodeuddrag',
+      'Edit Code Snippet': 'Rediger kodeuddrag',
+      'Font Awesome': 'Font Awesome',
+      'Web Application Icons': 'Webapplikationsikoner',
+      'Accessibility Icons': 'Tilgængelighedsikoner',
+      'Hand Icons': 'Håndikoner',
+      'Transportation Icons': 'Transportikoner',
+      'Gender Icons': 'Kønsikoner',
+      'Form Control Icons': 'Formularkontrol-ikoner',
+      'Payment Icons': 'Betalingsikoner',
+      'Chart Icons': 'Diagramikoner',
+      'Currency Icons': 'Valutaikoner',
+      'Text Editor Icons': 'Teksteditorikoner',
+      'Brand Icons': 'Brandikoner',
+      'Default': 'Standard',
+      'Lower Alpha': 'Små bogstaver (a, b, c)',
+      'Lower Greek': 'Små græske bogstaver',
+      'Lower Roman': 'Små romertal',
+      'Upper Alpha': 'Store bogstaver (A, B, C)',
+      'Upper Roman': 'Store romertal',
+      'Circle': 'Cirkel',
+      'Disc': 'Fyldt cirkel',
+      'Square': 'Firkant',
+      'Line Height': 'Linjehøjde',
+      'Single': 'Enkelt',
+      'Double': 'Dobbelt',
+      'Insert File': 'Indsæt fil',
+      'Save': 'Gem',
+      'Text Color': 'Tekstfarve',
+      'Background Color': 'Baggrundsfarve',
+      'Gray': 'Grå',
+      'Spaced': 'Med mellemrum',
+      'Uppercase': 'Store bogstaver',
+      'Rounded': 'Afrundet',
+      'Bordered': 'Med kant',
+      'Shadow': 'Skygge',
+      'Custom background colour input': 'Brugerdefineret baggrundsfarve',
+      'Background colour picker': 'Vælger for baggrundsfarve',
+      'Custom border colour input': 'Brugerdefineret kantfarve',
+      'Border colour picker': 'Vælger for kantfarve',
+      'Border colour': 'Kantfarve',
+      'Inline Class': 'Inline-klasse',
+      'Download PDF': 'Download PDF',
+      'Dashed Borders': 'Stiplede kanter',
+      'Alternate Rows': 'Skiftende rækker',
+      'Highlighted': 'Fremhævet',
+      'Thick': 'Tyk',
+      'Words': 'Ord',
+      'Insert Files': 'Indsæt filer',
+      'Image file type is invalid.': 'Billedfiltypen er ugyldig.',
+      'File is too large.': 'Filen er for stor.',
+      'Alternate Text': 'Alternativ tekst',
+      'Your browser does not support HTML5 vídeo.': 'Din browser understøtter ikke HTML5-video.',
+      'Transparent': 'Gennemsigtig',
+      'Big Red': 'Stor rød',
+      'Small Blue': 'Lille blå',
+      // AI Assist
+      'AI Shortcuts': 'AI-genveje',
+      'Ask AI to generate or refine text, adjusting its tone and language.': 'Bed AI om at generere eller forfine tekst og justere dens tone og sprog.',
+      'Ask AI to generate': 'Bed AI om at generere',
+      'AI responses can be inaccurate.': 'AI-svar kan være unøjagtige.',
+      'Select a text layer to edit': 'Vælg et tekstlag at redigere',
+      'Change Tone': 'Skift Tone',
+      'Translate To': 'Oversæt Til',
+      'Generating Response': 'Genererer Svar',
+      'Submit': 'Indsend',
+      'Stop': 'Stop',
+      'Try again': 'Prøv igen',
+      // AI Terms Consent
+      'To use AI features in Froala, you need to accept the AI Supplemental Terms.': 'For at bruge AI-funktioner i Froala skal du acceptere de supplerende AI-vilkår.',
+      'Please set': 'Indstil venligst',
+      'to': 'til',
+      'in your configuration to provide consent.': 'i din konfiguration for at give samtykke.',
+      'You can review the terms here:': 'Du kan gennemse vilkårene her:',
+      'View AI Supplemental Terms': 'Se supplerende AI-vilkår'
     },
     direction: 'ltr'
   };
 
-})));
+}));
 //# sourceMappingURL=da.js.map

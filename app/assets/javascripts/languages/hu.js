@@ -1,20 +1,19 @@
 /*!
- * froala_editor v4.7.1 (https://www.froala.com/wysiwyg-editor)
+ * froala_editor v5.2.0 (https://www.froala.com/wysiwyg-editor)
  * License https://froala.com/wysiwyg-editor/terms/
- * Copyright 2014-2025 Froala Labs
+ * Copyright 2014-2026 Froala Labs
  */
 
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('froala-editor')) :
   typeof define === 'function' && define.amd ? define(['froala-editor'], factory) :
-  (factory(global.FroalaEditor));
-}(this, (function (FE) { 'use strict';
-
-  FE = FE && FE.hasOwnProperty('default') ? FE['default'] : FE;
+  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global.FroalaEditor));
+})(this, (function (FE) { 'use strict';
 
   /**
    * Hungarian
    */
+
   FE.LANGUAGE['hu'] = {
     translation: {
       // Place holder
@@ -119,6 +118,7 @@
       'Something went wrong. Please try again.': 'Valami elromlott. Kérjük próbálja újra.',
       'Image Caption': 'Képaláírás',
       'Advanced Edit': 'Fejlett szerkesztés',
+      'Advanced Edit (File-Robot)': 'Fejlett szerkesztés',
       // Video
       'Insert Video': 'Videó beillesztése',
       'Embedded Code': 'Kód bemásolása',
@@ -169,6 +169,16 @@
       'Left align': 'Balra igazítás',
       'Center align': 'Középre igazítás',
       'Right align': 'Jobbra igazítás',
+      'Left align without wrap': 'Balra igazítás tördelés nélkül',
+      'Right align without wrap': 'Jobbra igazítás tördelés nélkül',
+      'solid': 'Folytonos vonal',
+      'dashed': 'Szaggatott vonal',
+      'dotted': 'Pontozott vonal',
+      'double': 'Kettős',
+      'groove': 'Vájatolt vonal',
+      'ridge': 'Domború vonal',
+      'inset': 'Belső vonal',
+      'outset': 'Külső vonal',
       // Files
       'Upload File': 'Fájl feltöltése',
       'Drop file': 'Húzza ide a fájlt',
@@ -188,7 +198,7 @@
       'Face savoring delicious food': 'Ízletes ételek kóstolása',
       'Relieved face': 'Megkönnyebbült arc',
       'Smiling face with heart-shaped eyes': 'Mosolygó arc szív alakú szemekkel',
-      'Smilin g face with sunglasses': 'Mosolygó arc napszemüvegben',
+      'Smiling face with sunglasses': 'Mosolygó arc napszemüvegben',
       'Smirking face': 'Vigyorgó arc',
       'Neutral face': 'Semleges arc',
       'Expressionless face': 'Kifejezéstelen arc',
@@ -243,7 +253,6 @@
       'Clear Formatting': 'Formázás eltávolítása',
       // Save
       'Save': 'Mentés',
-      'Ok': 'Rendben',
       // Undo, redo
       'Undo': 'Visszavonás',
       'Redo': 'Ismét',
@@ -326,10 +335,84 @@
       'Enter the anchor name without space': 'Adja meg a horgony nevét szóköz nélkül',
       'Anchor name already exists.': 'A horgony neve már létezik.',
       // Export to Word
-      'Export to Word': 'Exportálás Word-be'
+      'Export to Word': 'Exportálás Word-be',
+      'Ensure that all required dependent libraries are available for the plugin to work.': 'Győződjön meg arról, hogy a bővítmény működéséhez minden szükséges függő könyvtár elérhető.',
+      // Import_from_word
+      'Import from Word': 'Importálás Wordből',
+      'Please upload a valid file': 'Kérem, töltsön fel egy érvényes fájlt.',
+      'File size must be less than': 'A fájlméretnek kisebbnek kell lennie, mint',
+      //Code Snippet
+      'Code Snippet': 'Kódrészlet',
+      'Insert Code Snippet': 'Kódrészlet beszúrása',
+      'Edit Code Snippet': 'Kódrészlet szerkesztése',
+      'Font Awesome': 'Font Awesome',
+      'Web Application Icons': 'Webalkalmazás ikonok',
+      'Accessibility Icons': 'Akadálymentességi ikonok',
+      'Hand Icons': 'Kéz ikonok',
+      'Transportation Icons': 'Közlekedési ikonok',
+      'Gender Icons': 'Nem ikonok',
+      'Form Control Icons': 'Űrlapvezérlő ikonok',
+      'Payment Icons': 'Fizetési ikonok',
+      'Chart Icons': 'Diagram ikonok',
+      'Currency Icons': 'Pénznem ikonok',
+      'Text Editor Icons': 'Szövegszerkesztő ikonok',
+      'Brand Icons': 'Márka ikonok',
+      'Insert File': 'Fájl beszúrása',
+      'Characters': 'Karakterek',
+      'More Text': 'További szövegformázás',
+      'More Paragraph': 'További bekezdésformázás',
+      'More Rich': 'További speciális formázás',
+      'More Misc': 'További egyéb',
+      'Text Color': 'Szöveg színe',
+      'Background Color': 'Háttérszín',
+      'Gray': 'Szürke',
+      'Spaced': 'Térközös',
+      'Uppercase': 'Nagybetűs',
+      'Rounded': 'Lekerekített',
+      'Bordered': 'Szegéllyel',
+      'Shadow': 'Árnyék',
+      'Custom background colour input': 'Egyéni háttérszín megadása',
+      'Background colour picker': 'Háttérszín választó',
+      'Custom border colour input': 'Egyéni szegélyszín megadása',
+      'Border colour picker': 'Szegélyszín választó',
+      'Border colour': 'Szegélyszín',
+      'Inline Class': 'Inline osztály',
+      'Download PDF': 'PDF letöltése',
+      'Dashed Borders': 'Szaggatott szegély',
+      'Alternate Rows': 'Váltakozó sorok',
+      'Highlighted': 'Kiemelt',
+      'Thick': 'Vastag',
+      'Words': 'Szavak',
+      'Insert Files': 'Fájlok beszúrása',
+      'Image file type is invalid.': 'A képfájl típusa érvénytelen.',
+      'File is too large.': 'A fájl túl nagy.',
+      'Alternate Text': 'Alternatív szöveg',
+      'Your browser does not support HTML5 vídeo.': 'A böngésző nem támogatja a HTML5 videót.',
+      'Transparent': 'Átlátszó',
+      'Big Red': 'Nagy piros',
+      'Small Blue': 'Kis kék',
+      // AI Assist
+      'AI Shortcuts': 'AI Parancsikonok',
+      'Ask AI to generate or refine text, adjusting its tone and language.': 'Kérje meg az AI-t, hogy generáljon vagy finomítson szöveget, beállítva annak hangnemét és nyelvét.',
+      'Ask AI to generate': 'Kérje meg az AI-t a generálásra',
+      'AI responses can be inaccurate.': 'Az AI válaszai pontatlanok lehetnek.',
+      'Select a text layer to edit': 'Válasszon ki egy szövegréteget a szerkesztéshez',
+      'Change Tone': 'Hangnem Módosítása',
+      'Translate To': 'Fordítás Nyelvre',
+      'Generating Response': 'Válasz Generálása',
+      'Submit': 'Beküldés',
+      'Stop': 'Állj',
+      'Try again': 'Próbáld újra',
+      // AI Terms Consent
+      'To use AI features in Froala, you need to accept the AI Supplemental Terms.': 'A Froala AI-funkcióinak használatához el kell fogadnia az AI kiegészítő feltételeit.',
+      'Please set': 'Kérjük, állítsa be',
+      'to': 'értékre',
+      'in your configuration to provide consent.': 'a konfigurációjában a hozzájárulás megadásához.',
+      'You can review the terms here:': 'A feltételeket itt tekintheti meg:',
+      'View AI Supplemental Terms': 'AI kiegészítő feltételek megtekintése'
     },
     direction: 'ltr'
   };
 
-})));
+}));
 //# sourceMappingURL=hu.js.map

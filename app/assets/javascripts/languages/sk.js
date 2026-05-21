@@ -1,20 +1,19 @@
 /*!
- * froala_editor v4.7.1 (https://www.froala.com/wysiwyg-editor)
+ * froala_editor v5.2.0 (https://www.froala.com/wysiwyg-editor)
  * License https://froala.com/wysiwyg-editor/terms/
- * Copyright 2014-2025 Froala Labs
+ * Copyright 2014-2026 Froala Labs
  */
 
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('froala-editor')) :
   typeof define === 'function' && define.amd ? define(['froala-editor'], factory) :
-  (factory(global.FroalaEditor));
-}(this, (function (FE) { 'use strict';
-
-  FE = FE && FE.hasOwnProperty('default') ? FE['default'] : FE;
+  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global.FroalaEditor));
+})(this, (function (FE) { 'use strict';
 
   /**
    * Slovak
    */
+
   FE.LANGUAGE['sk'] = {
     translation: {
       // Place holder
@@ -119,6 +118,7 @@
       'Something went wrong. Please try again.': 'Niečo sa pokazilo. Prosím, skúste to znova.',
       'Image Caption': 'Titulok obrázka',
       'Advanced Edit': 'Pokročilá úprava',
+      'Advanced Edit (File-Robot)': 'Pokročilá úprava',
       // Video
       'Insert Video': 'Vložiť video',
       'Embedded Code': 'Vložený kód',
@@ -169,6 +169,16 @@
       'Left align': 'Zarovnať doľava',
       'Center align': 'Zarovnať na stred',
       'Right align': 'Zarovnať doprava',
+      'Left align without wrap': 'Zarovnať vľavo bez zalamovanie',
+      'Right align without wrap': 'Zarovnať vpravo bez zalamovanie',
+      'solid': 'Plná čiara',
+      'dashed': 'Čiarkovaná čiara',
+      'dotted': 'Bodkovaná čiara',
+      'double': 'Dvojitá',
+      'groove': 'Ryhovaná čiara',
+      'ridge': 'Vyvýšená čiara',
+      'inset': 'Vnútorná čiara',
+      'outset': 'Vonkajšia čiara',
       // Files
       'Upload File': 'Nahrať súbor',
       'Drop file': 'Vložte súbor sem',
@@ -243,7 +253,6 @@
       'Clear Formatting': 'Vymazať formátovanie',
       // Save
       'Save': 'Uložiť',
-      'Ok': 'OK',
       // Undo, redo
       'Undo': 'Späť',
       'Redo': 'Znova',
@@ -326,10 +335,84 @@
       'Enter the anchor name without space': 'Zadajte názov kotvy bez medzier',
       'Anchor name already exists.': 'Názov kotvy už existuje.',
       // Export to Word
-      'Export to Word': 'Exportovať do Wordu'
+      'Export to Word': 'Exportovať do Wordu',
+      'Ensure that all required dependent libraries are available for the plugin to work.': 'Uistite sa, že sú k dispozícii všetky požadované závislé knižnice, aby doplnok fungoval.',
+      // Import_from_word
+      'Import from Word': 'Importovať z Wordu',
+      'Please upload a valid file': 'Nahrajte platný súbor.',
+      'File size must be less than': 'Veľkosť súboru musí byť menšia ako',
+      //Code Snippet
+      'Code Snippet': 'Úryvok kódu',
+      'Insert Code Snippet': 'Vložiť úryvok kódu',
+      'Edit Code Snippet': 'Upraviť úryvok kódu',
+      'Font Awesome': 'Font Awesome',
+      'Web Application Icons': 'Ikony webových aplikácií',
+      'Accessibility Icons': 'Ikony prístupnosti',
+      'Hand Icons': 'Ikony rúk',
+      'Transportation Icons': 'Ikony dopravy',
+      'Gender Icons': 'Ikony pohlavia',
+      'Form Control Icons': 'Ikony ovládacích prvkov formulára',
+      'Payment Icons': 'Ikony platieb',
+      'Chart Icons': 'Ikony grafov',
+      'Currency Icons': 'Ikony mien',
+      'Text Editor Icons': 'Ikony textového editora',
+      'Brand Icons': 'Ikony značiek',
+      'Insert File': 'Vložiť súbor',
+      'Characters': 'Znaky',
+      'More Text': 'Viac formátovania textu',
+      'More Paragraph': 'Viac formátovania odseku',
+      'More Rich': 'Viac pokročilého formátovania',
+      'More Misc': 'Viac možností',
+      'Text Color': 'Farba textu',
+      'Background Color': 'Farba pozadia',
+      'Gray': 'Sivá',
+      'Spaced': 'S rozostupmi',
+      'Uppercase': 'Veľké písmená',
+      'Rounded': 'Zaoblené',
+      'Bordered': 'S okrajom',
+      'Shadow': 'Tieň',
+      'Custom background colour input': 'Vlastný vstup farby pozadia',
+      'Background colour picker': 'Výber farby pozadia',
+      'Custom border colour input': 'Vlastný vstup farby okraja',
+      'Border colour picker': 'Výber farby okraja',
+      'Border colour': 'Farba okraja',
+      'Inline Class': 'Inline trieda',
+      'Download PDF': 'Stiahnuť PDF',
+      'Dashed Borders': 'Prerušované okraje',
+      'Alternate Rows': 'Striedavé riadky',
+      'Highlighted': 'Zvýraznené',
+      'Thick': 'Hrubé',
+      'Words': 'Slová',
+      'Insert Files': 'Vložiť súbory',
+      'Image file type is invalid.': 'Typ obrázkového súboru je neplatný.',
+      'File is too large.': 'Súbor je príliš veľký.',
+      'Alternate Text': 'Alternatívny text',
+      'Your browser does not support HTML5 vídeo.': 'Váš prehliadač nepodporuje HTML5 video.',
+      'Transparent': 'Priehľadné',
+      'Big Red': 'Veľká červená',
+      'Small Blue': 'Malá modrá',
+      // AI Assist
+      'AI Shortcuts': 'AI skratky',
+      'Ask AI to generate or refine text, adjusting its tone and language.': 'Požiadajte AI, aby vygenerovala alebo vylepšila text a upravila jeho tón a jazyk.',
+      'Ask AI to generate': 'Požiadať AI o generovanie',
+      'AI responses can be inaccurate.': 'Odpovede AI môžu byť nepresné.',
+      'Select a text layer to edit': 'Vyberte textovú vrstvu na úpravu',
+      'Change Tone': 'Zmeniť Tón',
+      'Translate To': 'Preložiť Do',
+      'Generating Response': 'Generovanie Odpovede',
+      'Submit': 'Odoslať',
+      'Stop': 'Zastaviť',
+      'Try again': 'Skúsiť znova',
+      // AI Terms Consent
+      'To use AI features in Froala, you need to accept the AI Supplemental Terms.': 'Ak chcete používať funkcie AI v aplikácii Froala, musíte prijať Doplnkové podmienky AI.',
+      'Please set': 'Nastavte',
+      'to': 'na',
+      'in your configuration to provide consent.': 'vo svojej konfigurácii na vyjadrenie súhlasu.',
+      'You can review the terms here:': 'Podmienky si môžete prezrieť tu:',
+      'View AI Supplemental Terms': 'Zobraziť Doplnkové podmienky AI'
     },
     direction: 'ltr'
   };
 
-})));
+}));
 //# sourceMappingURL=sk.js.map

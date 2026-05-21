@@ -1,20 +1,19 @@
 /*!
- * froala_editor v4.7.1 (https://www.froala.com/wysiwyg-editor)
+ * froala_editor v5.2.0 (https://www.froala.com/wysiwyg-editor)
  * License https://froala.com/wysiwyg-editor/terms/
- * Copyright 2014-2025 Froala Labs
+ * Copyright 2014-2026 Froala Labs
  */
 
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('froala-editor')) :
   typeof define === 'function' && define.amd ? define(['froala-editor'], factory) :
-  (factory(global.FroalaEditor));
-}(this, (function (FE) { 'use strict';
-
-  FE = FE && FE.hasOwnProperty('default') ? FE['default'] : FE;
+  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global.FroalaEditor));
+})(this, (function (FE) { 'use strict';
 
   /**
    * Swedish
    */
+
   FE.LANGUAGE['sv'] = {
     translation: {
       // Place holder
@@ -106,6 +105,7 @@
       'Something went wrong. Please try again.': "N\xE5got gick fel. Var god f\xF6rs\xF6k igen.",
       'Image Caption': 'Bildtext',
       'Advanced Edit': 'Avancerad redigering',
+      'Advanced Edit (File-Robot)': 'Avancerad redigering',
       // Video
       'Insert Video': 'Infoga video',
       'Embedded Code': "Inb\xE4ddad kod",
@@ -156,6 +156,16 @@
       'Left align': 'Vänsterjustera',
       'Center align': 'Centerjustera',
       'Right align': 'Högerjustera',
+      'Left align without wrap': 'Vänsterjustera utan radbrytning',
+      'Right align without wrap': 'Högerjustera utan radbrytning',
+      'solid': 'Heldragen linje',
+      'dashed': 'Streckad linje',
+      'dotted': 'Punktad linje',
+      'double': 'Dubbel linje',
+      'groove': 'Graverad linje',
+      'ridge': 'Upphöjd linje',
+      'inset': 'Inre linje',
+      'outset': 'Yttre linje',
       // Files
       'Upload File': 'Ladda upp fil',
       'Drop file': "Sl\xE4pp fil",
@@ -230,7 +240,6 @@
       'Clear Formatting': 'Ta bort formatering',
       // Save
       'Save': 'Spara',
-      'Ok': 'Ok',
       // Undo, redo
       'Undo': "\xC5ngra",
       'Redo': "G\xF6r om",
@@ -320,10 +329,91 @@
       'Enter the anchor name without space': 'Ange ankarnamnet utan mellanslag',
       'Anchor name already exists.': 'Ankarnamnet finns redan.',
       // Export to Word
-      'Export to Word': 'Exportera till Word'
+      'Export to Word': 'Exportera till Word',
+      'Ensure that all required dependent libraries are available for the plugin to work.': 'Se till att alla nödvändiga beroende bibliotek är tillgängliga för att tillägget ska fungera.',
+      // Import_from_word
+      'Import from Word': 'Importera från Word',
+      'Please upload a valid file': 'Vänligen ladda upp en giltig fil.',
+      'File size must be less than': 'Filstorleken måste vara mindre än',
+      //Code Snippet
+      'Code Snippet': 'Kodavsnitt',
+      'Insert Code Snippet': 'Infoga kodavsnitt',
+      'Edit Code Snippet': 'Redigera kodavsnitt',
+      'Font Awesome': 'Font Awesome',
+      'Web Application Icons': 'Webbapplikationsikoner',
+      'Accessibility Icons': 'Tillgänglighetsikoner',
+      'Hand Icons': 'Handikoner',
+      'Transportation Icons': 'Transportikoner',
+      'Gender Icons': 'Könsikoner',
+      'Form Control Icons': 'Formulärkontrollikoner',
+      'Payment Icons': 'Betalningsikoner',
+      'Chart Icons': 'Diagramikoner',
+      'Currency Icons': 'Valutaikoner',
+      'Text Editor Icons': 'Textredigerarikoner',
+      'Brand Icons': 'Varumärkesikoner',
+      'Default': 'Standard',
+      'Lower Alpha': 'Små bokstäver (a, b, c)',
+      'Lower Greek': 'Små grekiska bokstäver',
+      'Lower Roman': 'Små romerska siffror',
+      'Upper Alpha': 'Stora bokstäver (A, B, C)',
+      'Upper Roman': 'Stora romerska siffror',
+      'Circle': 'Cirkel',
+      'Disc': 'Fylld cirkel',
+      'Square': 'Kvadrat',
+      'Line Height': 'Radhöjd',
+      'Single': 'Enkel',
+      'Double': 'Dubbel',
+      'Insert File': 'Infoga fil',
+      'Text Color': 'Textfärg',
+      'Background Color': 'Bakgrundsfärg',
+      'Gray': 'Grå',
+      'Spaced': 'Gles',
+      'Uppercase': 'Versaler',
+      'Rounded': 'Rundad',
+      'Bordered': 'Med kant',
+      'Shadow': 'Skugga',
+      'Custom background colour input': 'Anpassad bakgrundsfärg',
+      'Background colour picker': 'Välj bakgrundsfärg',
+      'Custom border colour input': 'Anpassad kantfärg',
+      'Border colour picker': 'Välj kantfärg',
+      'Border colour': 'Kantfärg',
+      'Inline Class': 'Inline-klass',
+      'Download PDF': 'Ladda ner PDF',
+      'Dashed Borders': 'Streckade kanter',
+      'Alternate Rows': 'Varannan rad',
+      'Highlighted': 'Markerad',
+      'Thick': 'Tjock',
+      'Words': 'Ord',
+      'Insert Files': 'Infoga filer',
+      'Image file type is invalid.': 'Ogiltig bildfilstyp.',
+      'File is too large.': 'Filen är för stor.',
+      'Alternate Text': 'Alternativ text',
+      'Your browser does not support HTML5 vídeo.': 'Din webbläsare stöder inte HTML5-video.',
+      'Transparent': 'Transparent',
+      'Big Red': 'Stor röd',
+      'Small Blue': 'Liten blå',
+      // AI Assist
+      'AI Shortcuts': 'AI Genvägar',
+      'Ask AI to generate or refine text, adjusting its tone and language.': 'Be AI att generera eller förfina text och justera dess ton och språk.',
+      'Ask AI to generate': 'Be AI att generera',
+      'AI responses can be inaccurate.': 'AI-svar kan vara felaktiga.',
+      'Select a text layer to edit': 'Välj ett textlager att redigera',
+      'Change Tone': 'Ändra Ton',
+      'Translate To': 'Översätt Till',
+      'Generating Response': 'Genererar Svar',
+      'Submit': 'Skicka in',
+      'Stop': 'Stoppa',
+      'Try again': 'Försök igen',
+      // AI Terms Consent
+      'To use AI features in Froala, you need to accept the AI Supplemental Terms.': 'För att använda AI-funktioner i Froala måste du acceptera de kompletterande AI-villkoren.',
+      'Please set': 'Ange',
+      'to': 'till',
+      'in your configuration to provide consent.': 'i din konfiguration för att ge samtycke.',
+      'You can review the terms here:': 'Du kan granska villkoren här:',
+      'View AI Supplemental Terms': 'Visa kompletterande AI-villkor'
     },
     direction: 'ltr'
   };
 
-})));
+}));
 //# sourceMappingURL=sv.js.map

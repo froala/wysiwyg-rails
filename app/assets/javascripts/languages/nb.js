@@ -1,20 +1,19 @@
 /*!
- * froala_editor v4.7.1 (https://www.froala.com/wysiwyg-editor)
+ * froala_editor v5.2.0 (https://www.froala.com/wysiwyg-editor)
  * License https://froala.com/wysiwyg-editor/terms/
- * Copyright 2014-2025 Froala Labs
+ * Copyright 2014-2026 Froala Labs
  */
 
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('froala-editor')) :
   typeof define === 'function' && define.amd ? define(['froala-editor'], factory) :
-  (factory(global.FroalaEditor));
-}(this, (function (FE) { 'use strict';
-
-  FE = FE && FE.hasOwnProperty('default') ? FE['default'] : FE;
+  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global.FroalaEditor));
+})(this, (function (FE) { 'use strict';
 
   /**
    * Norwegian
    */
+
   FE.LANGUAGE['nb'] = {
     translation: {
       // Place holder
@@ -106,6 +105,7 @@
       'Something went wrong. Please try again.': "Noe gikk galt. V\xE6r s\xE5 snill, pr\xF8v p\xE5 nytt.",
       'Image Caption': 'Bilde bildetekst',
       'Advanced Edit': 'Avansert redigering',
+      'Advanced Edit (File-Robot)': 'Avansert redigering',
       // Video
       'Insert Video': 'Sett inn video',
       'Embedded Code': 'Embedded kode',
@@ -156,6 +156,16 @@
       'Left align': 'Venstrejustert',
       'Center align': 'Midtjuster',
       'Right align': 'Høyrejuster',
+      'Left align without wrap': 'Venstrejuster uten tekstomflyt',
+      'Right align without wrap': 'Høyrejuster uten tekstomflyt',
+      'solid': 'Heltrukket linje',
+      'dashed': 'Stiplet linje',
+      'dotted': 'Prikket linje',
+      'double': 'Dobbel linje',
+      'groove': 'Frest linje',
+      'ridge': 'Hevet linje',
+      'inset': 'Innvendig linje',
+      'outset': 'Utvendig linje',
       // Files
       'Upload File': 'Opplastingsfil',
       'Drop file': 'Slippe fil',
@@ -230,7 +240,6 @@
       'Clear Formatting': 'Fjerne formatering',
       // Save
       'Save': 'Lagre',
-      'Ok': 'OK',
       // Undo, redo
       'Undo': 'Angre',
       'Redo': "Utf\xF8r likevel",
@@ -318,10 +327,92 @@
       'Anchor Link': 'Ankerlenke',
       'Scroll to target': 'Rull til mål',
       'Enter the anchor name without space': 'Skriv ankernavnet uten mellomrom',
-      'Anchor name already exists.': 'Ankernavnet finnes allerede.'
+      'Anchor name already exists.': 'Ankernavnet finnes allerede.',
+      'Ensure that all required dependent libraries are available for the plugin to work.': 'Sørg for at alle nødvendige avhengige biblioteker er tilgjengelige for at programtillegget skal fungere.',
+      // Import_from_word
+      'Import from Word': 'Importer fra Word',
+      'Please upload a valid file': 'Last opp en gyldig fil.',
+      'File size must be less than': 'Filstørrelsen må være mindre enn',
+      //Code Snippet
+      'Code Snippet': 'Kodebit',
+      'Insert Code Snippet': 'Sett inn kodebit',
+      'Edit Code Snippet': 'Rediger kodebit',
+      'Font Awesome': 'Font Awesome',
+      'Web Application Icons': 'Ikoner for webapplikasjoner',
+      'Accessibility Icons': 'Tilgjengelighetsikoner',
+      'Hand Icons': 'Håndikoner',
+      'Transportation Icons': 'Transportikoner',
+      'Gender Icons': 'Kjønnsikoner',
+      'Form Control Icons': 'Skjemakontroll-ikoner',
+      'Payment Icons': 'Betalingsikoner',
+      'Chart Icons': 'Diagramikoner',
+      'Currency Icons': 'Valutaikoner',
+      'Text Editor Icons': 'Tekstredigeringsikoner',
+      'Brand Icons': 'Merkeikoner',
+      'Default': 'Standard',
+      'Lower Alpha': 'Små bokstaver (a, b, c)',
+      'Lower Greek': 'Små greske bokstaver',
+      'Lower Roman': 'Små romertall',
+      'Upper Alpha': 'Store bokstaver (A, B, C)',
+      'Upper Roman': 'Store romertall',
+      'Circle': 'Sirkel',
+      'Disc': 'Fylt sirkel',
+      'Square': 'Firkant',
+      'Line Height': 'Linjehøyde',
+      'Single': 'Enkel',
+      'Double': 'Dobbel',
+      'Insert File': 'Sett inn fil',
+      'Text Color': 'Tekstfarge',
+      'Background Color': 'Bakgrunnsfarge',
+      'Export to Word': 'Eksporter til Word',
+      'Gray': 'Grå',
+      'Spaced': 'Med mellomrom',
+      'Uppercase': 'Store bokstaver',
+      'Rounded': 'Avrundet',
+      'Bordered': 'Med kant',
+      'Shadow': 'Skygge',
+      'Custom background colour input': 'Egendefinert bakgrunnsfarge',
+      'Background colour picker': 'Bakgrunnsfargevelger',
+      'Custom border colour input': 'Egendefinert kantfarge',
+      'Border colour picker': 'Kantfargevelger',
+      'Border colour': 'Kantfarge',
+      'Inline Class': 'Inline-klasse',
+      'Download PDF': 'Last ned PDF',
+      'Dashed Borders': 'Stiplede kanter',
+      'Alternate Rows': 'Annenhver rad',
+      'Highlighted': 'Uthevet',
+      'Thick': 'Tykk',
+      'Words': 'Ord',
+      'Insert Files': 'Sett inn filer',
+      'Image file type is invalid.': 'Ugyldig bildefiltype.',
+      'File is too large.': 'Filen er for stor.',
+      'Alternate Text': 'Alternativ tekst',
+      'Your browser does not support HTML5 vídeo.': 'Nettleseren din støtter ikke HTML5-video.',
+      'Transparent': 'Gjennomsiktig',
+      'Big Red': 'Stor rød',
+      'Small Blue': 'Liten blå',
+      // AI Assist
+      'AI Shortcuts': 'AI-snarveier',
+      'Ask AI to generate or refine text, adjusting its tone and language.': 'Be AI om å generere eller forbedre tekst, og justere tonen og språket.',
+      'Ask AI to generate': 'Be AI om å generere',
+      'AI responses can be inaccurate.': 'AI-svar kan være unøyaktige.',
+      'Select a text layer to edit': 'Velg et tekstlag å redigere',
+      'Change Tone': 'Endre Tone',
+      'Translate To': 'Oversett Til',
+      'Generating Response': 'Genererer Svar',
+      'Submit': 'Send inn',
+      'Stop': 'Stopp',
+      'Try again': 'Prøv igjen',
+      // AI Terms Consent
+      'To use AI features in Froala, you need to accept the AI Supplemental Terms.': 'For å bruke AI-funksjoner i Froala må du godta de supplerende AI-vilkårene.',
+      'Please set': 'Vennligst sett',
+      'to': 'til',
+      'in your configuration to provide consent.': 'i konfigurasjonen din for å gi samtykke.',
+      'You can review the terms here:': 'Du kan gjennomgå vilkårene her:',
+      'View AI Supplemental Terms': 'Se supplerende AI-vilkår'
     },
     direction: 'ltr'
   };
 
-})));
+}));
 //# sourceMappingURL=nb.js.map

@@ -1,20 +1,19 @@
 /*!
- * froala_editor v4.7.1 (https://www.froala.com/wysiwyg-editor)
+ * froala_editor v5.2.0 (https://www.froala.com/wysiwyg-editor)
  * License https://froala.com/wysiwyg-editor/terms/
- * Copyright 2014-2025 Froala Labs
+ * Copyright 2014-2026 Froala Labs
  */
 
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('froala-editor')) :
   typeof define === 'function' && define.amd ? define(['froala-editor'], factory) :
-  (factory(global.FroalaEditor));
-}(this, (function (FE) { 'use strict';
-
-  FE = FE && FE.hasOwnProperty('default') ? FE['default'] : FE;
+  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global.FroalaEditor));
+})(this, (function (FE) { 'use strict';
 
   /**
    * Turkish
    */
+
   FE.LANGUAGE['tr'] = {
     translation: {
       // Place holder
@@ -106,6 +105,7 @@
       'Something went wrong. Please try again.': "Bir \u015Feyler yanl\u0131\u015F gitti. L\xFCtfen tekrar deneyin.",
       'Image Caption': 'Resim yazısı',
       'Advanced Edit': 'Ileri düzey düzenleme',
+      'Advanced Edit (File-Robot)': 'Ileri düzey düzenleme',
       // Video
       'Insert Video': 'Video ekle',
       'Embedded Code': "G\xF6m\xFCl\xFC kod",
@@ -156,6 +156,16 @@
       'Left align': 'Sola hizala',
       'Center align': 'Ortala',
       'Right align': 'Sağa hizala',
+      'Left align without wrap': 'Sarmadan sola hizala',
+      'Right align without wrap': 'Sarmadan sağa hizala',
+      'solid': 'Düz çizgi',
+      'dashed': 'Kesikli çizgi',
+      'dotted': 'Noktalı çizgi',
+      'double': 'Çift çizgi',
+      'groove': 'Oyuk çizgi',
+      'ridge': 'Kabartmalı çizgi',
+      'inset': 'İç çizgi',
+      'outset': 'Dış çizgi',
       // Files
       'Upload File': "Dosya Y\xFCkle",
       'Drop file': "B\u0131rak dosya",
@@ -230,7 +240,6 @@
       'Clear Formatting': "Bi\xE7imlendirme kald\u0131r",
       // Save
       'Save': 'Kayıt etmek',
-      'Ok': 'Tamam',
       // Undo, redo
       'Undo': 'Geri Al',
       'Redo': 'Yinele',
@@ -320,10 +329,91 @@
       'Enter the anchor name without space': 'Çapa adını boşluksuz girin',
       'Anchor name already exists.': 'Çapa adı zaten mevcut.',
       // Export to Word
-      'Export to Word': 'Word\'e Aktar'
+      'Export to Word': 'Word\'e Aktar',
+      'Ensure that all required dependent libraries are available for the plugin to work.': 'Eklentinin çalışması için gereken tüm bağımlı kitaplıkların mevcut olduğundan emin olun.',
+      // Import_from_word
+      'Import from Word': 'Word\'den İçe Aktar',
+      'Please upload a valid file': 'Lütfen geçerli bir dosya yükleyin.',
+      'File size must be less than': 'Dosya boyutu şu değerden az olmalıdır',
+      //Code Snippet
+      'Code Snippet': 'Kod Parçacığı',
+      'Insert Code Snippet': 'Kod Parçacığı Ekle',
+      'Edit Code Snippet': 'Kod Parçacığı Düzenle',
+      'Font Awesome': 'Font Awesome',
+      'Web Application Icons': 'Web uygulama simgeleri',
+      'Accessibility Icons': 'Erişilebilirlik simgeleri',
+      'Hand Icons': 'El simgeleri',
+      'Transportation Icons': 'Ulaşım simgeleri',
+      'Gender Icons': 'Cinsiyet simgeleri',
+      'Form Control Icons': 'Form kontrol simgeleri',
+      'Payment Icons': 'Ödeme simgeleri',
+      'Chart Icons': 'Grafik simgeleri',
+      'Currency Icons': 'Para birimi simgeleri',
+      'Text Editor Icons': 'Metin düzenleyici simgeleri',
+      'Brand Icons': 'Marka simgeleri',
+      'Default': 'Varsayılan',
+      'Lower Alpha': 'Küçük harfler (a, b, c)',
+      'Lower Greek': 'Küçük Yunanca harfler',
+      'Lower Roman': 'Küçük Roma rakamları',
+      'Upper Alpha': 'Büyük harfler (A, B, C)',
+      'Upper Roman': 'Büyük Roma rakamları',
+      'Circle': 'Daire',
+      'Disc': 'Dolu daire',
+      'Square': 'Kare',
+      'Line Height': 'Satır yüksekliği',
+      'Single': 'Tek',
+      'Double': 'Çift',
+      'Insert File': 'Dosya ekle',
+      'Text Color': 'Metin rengi',
+      'Background Color': 'Arka plan rengi',
+      'Gray': 'Gri',
+      'Spaced': 'Aralıklı',
+      'Uppercase': 'Büyük harf',
+      'Rounded': 'Yuvarlatılmış',
+      'Bordered': 'Kenarlıklı',
+      'Shadow': 'Gölge',
+      'Custom background colour input': 'Özel arka plan rengi girişi',
+      'Background colour picker': 'Arka plan rengi seçici',
+      'Custom border colour input': 'Özel kenarlık rengi girişi',
+      'Border colour picker': 'Kenarlık rengi seçici',
+      'Border colour': 'Kenarlık rengi',
+      'Inline Class': 'Satır içi sınıf',
+      'Download PDF': 'PDF indir',
+      'Dashed Borders': 'Kesik kenarlıklar',
+      'Alternate Rows': 'Alternatif satırlar',
+      'Highlighted': 'Vurgulanmış',
+      'Thick': 'Kalın',
+      'Words': 'Kelimeler',
+      'Insert Files': 'Dosya ekle',
+      'Image file type is invalid.': 'Görsel dosya türü geçersiz.',
+      'File is too large.': 'Dosya çok büyük.',
+      'Alternate Text': 'Alternatif metin',
+      'Your browser does not support HTML5 vídeo.': 'Tarayıcınız HTML5 videoyu desteklemiyor.',
+      'Transparent': 'Şeffaf',
+      'Big Red': 'Büyük kırmızı',
+      'Small Blue': 'Küçük mavi',
+      // AI Assist
+      'AI Shortcuts': 'AI Kısayolları',
+      'Ask AI to generate or refine text, adjusting its tone and language.': 'AI\'dan tonunu ve dilini ayarlayarak metin oluşturmasını veya iyileştirmesini isteyin.',
+      'Ask AI to generate': 'AI\'dan oluşturmasını isteyin',
+      'AI responses can be inaccurate.': 'AI yanıtları yanlış olabilir.',
+      'Select a text layer to edit': 'Düzenlemek için bir metin katmanı seçin',
+      'Change Tone': 'Tonu Değiştir',
+      'Translate To': 'Şuna Çevir',
+      'Generating Response': 'Yanıt Oluşturuluyor',
+      'Submit': 'Gönder',
+      'Stop': 'Durdur',
+      'Try again': 'Tekrar dene',
+      // AI Terms Consent
+      'To use AI features in Froala, you need to accept the AI Supplemental Terms.': 'Froala\'da yapay zeka özelliklerini kullanmak için Yapay Zeka Ek Şartlarını kabul etmeniz gerekir.',
+      'Please set': 'Lütfen ayarlayın',
+      'to': 'olarak',
+      'in your configuration to provide consent.': 'yapılandırmanızda onay sağlamak için.',
+      'You can review the terms here:': 'Şartları buradan inceleyebilirsiniz:',
+      'View AI Supplemental Terms': 'Yapay Zeka Ek Şartlarını Görüntüle'
     },
     direction: 'ltr'
   };
 
-})));
+}));
 //# sourceMappingURL=tr.js.map

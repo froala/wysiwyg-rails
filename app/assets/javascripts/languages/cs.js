@@ -1,20 +1,19 @@
 /*!
- * froala_editor v4.7.1 (https://www.froala.com/wysiwyg-editor)
+ * froala_editor v5.2.0 (https://www.froala.com/wysiwyg-editor)
  * License https://froala.com/wysiwyg-editor/terms/
- * Copyright 2014-2025 Froala Labs
+ * Copyright 2014-2026 Froala Labs
  */
 
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('froala-editor')) :
   typeof define === 'function' && define.amd ? define(['froala-editor'], factory) :
-  (factory(global.FroalaEditor));
-}(this, (function (FE) { 'use strict';
-
-  FE = FE && FE.hasOwnProperty('default') ? FE['default'] : FE;
+  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global.FroalaEditor));
+})(this, (function (FE) { 'use strict';
 
   /**
    * Czech
    */
+
   FE.LANGUAGE['cs'] = {
     translation: {
       // Place holder
@@ -118,6 +117,7 @@
       'Something went wrong. Please try again.': 'Něco se pokazilo. Prosím zkuste to znovu.',
       'Image Caption': 'Titulek obrázku',
       'Advanced Edit': 'Pokročilá úprava',
+      'Advanced Edit (File-Robot)': 'Pokročilá úprava',
       // Video
       'Insert Video': 'Vložit video',
       'Embedded Code': 'Vložený kód',
@@ -168,6 +168,16 @@
       'Left align': 'Zarovnat doleva',
       'Center align': 'Zarovnat na střed',
       'Right align': 'Zarovnat vpravo',
+      'Left align without wrap': 'Zarovnat vlevo bez obtékání',
+      'Right align without wrap': 'Zarovnat vpravo bez obtékání',
+      'solid': 'Plná čára',
+      'dashed': 'Čárkovaná čára',
+      'double': 'Dvojitá',
+      'dotted': 'Tečkovaná čára',
+      'groove': 'Vydutá čára',
+      'ridge': 'Vystouplá čára',
+      'inset': 'Vnitřní čára',
+      'outset': 'Vnější čára',
       // Files
       'Upload File': 'Nahrát soubor',
       'Drop file': 'Přetáhněte sem soubor',
@@ -325,10 +335,84 @@
       'Drag PageBreak': 'Přetáhnout zalomení stránky',
       'Page Break': 'Konec stránky',
       //Export to Word
-      'Export to Word': 'Exportovat do Wordu'
+      'Export to Word': 'Exportovat do Wordu',
+      'Ensure that all required dependent libraries are available for the plugin to work.': 'Zajistěte, aby byly k dispozici všechny požadované závislé knihovny pro funkčnost pluginu.',
+      // Import_from_word
+      'Import from Word': 'Importovat z Wordu',
+      'Please upload a valid file': 'Nahrajte platný soubor.',
+      'File size must be less than': 'Velikost souboru musí být menší než',
+      //Code Snippet
+      'Code Snippet': 'Úryvek kódu',
+      'Insert Code Snippet': 'Vložit úryvek kódu',
+      'Edit Code Snippet': 'Upravit úryvek kódu',
+      'Font Awesome': 'Font Awesome',
+      'Web Application Icons': 'Ikony webových aplikací',
+      'Accessibility Icons': 'Ikony přístupnosti',
+      'Hand Icons': 'Ikony rukou',
+      'Transportation Icons': 'Ikony dopravy',
+      'Gender Icons': 'Ikony pohlaví',
+      'Form Control Icons': 'Ikony ovládacích prvků formuláře',
+      'Payment Icons': 'Ikony plateb',
+      'Chart Icons': 'Ikony grafů',
+      'Currency Icons': 'Ikony měn',
+      'Text Editor Icons': 'Ikony textového editoru',
+      'Brand Icons': 'Ikony značek',
+      'Insert File': 'Vložit soubor',
+      'Characters': 'Znaky',
+      'More Text': 'Další formátování textu',
+      'More Paragraph': 'Další formátování odstavce',
+      'More Rich': 'Další pokročilé formátování',
+      'More Misc': 'Další možnosti',
+      'Text Color': 'Barva textu',
+      'Background Color': 'Barva pozadí',
+      'Gray': 'Šedá',
+      'Spaced': 'Proložené',
+      'Uppercase': 'Velká písmena',
+      'Rounded': 'Zaoblené',
+      'Bordered': 'S ohraničením',
+      'Shadow': 'Stín',
+      'Custom background colour input': 'Vlastní zadání barvy pozadí',
+      'Background colour picker': 'Výběr barvy pozadí',
+      'Custom border colour input': 'Vlastní zadání barvy okraje',
+      'Border colour picker': 'Výběr barvy okraje',
+      'Border colour': 'Barva okraje',
+      'Inline Class': 'Inline třída',
+      'Download PDF': 'Stáhnout PDF',
+      'Dashed Borders': 'Přerušované okraje',
+      'Alternate Rows': 'Střídavé řádky',
+      'Highlighted': 'Zvýrazněné',
+      'Thick': 'Silné',
+      'Words': 'Slova',
+      'Insert Files': 'Vložit soubory',
+      'Image file type is invalid.': 'Typ obrázku není platný.',
+      'File is too large.': 'Soubor je příliš velký.',
+      'Alternate Text': 'Alternativní text',
+      'Your browser does not support HTML5 vídeo.': 'Váš prohlížeč nepodporuje HTML5 video.',
+      'Transparent': 'Průhledné',
+      'Big Red': 'Velká červená',
+      'Small Blue': 'Malá modrá',
+      // AI Assist
+      'AI Shortcuts': 'Zkratky AI',
+      'Ask AI to generate or refine text, adjusting its tone and language.': 'Požádejte AI, aby vygenerovala nebo vylepšila text a upravila jeho tón a jazyk.',
+      'Ask AI to generate': 'Požádat AI o generování',
+      'AI responses can be inaccurate.': 'Odpovědi AI mohou být nepřesné.',
+      'Select a text layer to edit': 'Vyberte textovou vrstvu k úpravě',
+      'Change Tone': 'Změnit Tón',
+      'Translate To': 'Přeložit Do',
+      'Generating Response': 'Generování Odpovědi',
+      'Submit': 'Odeslat',
+      'Stop': 'Zastavit',
+      'Try again': 'Zkusit znovu',
+      // AI Terms Consent
+      'To use AI features in Froala, you need to accept the AI Supplemental Terms.': 'Chcete-li používat funkce AI v Froala, musíte přijmout Doplňkové podmínky pro AI.',
+      'Please set': 'Nastavte prosím',
+      'to': 'na',
+      'in your configuration to provide consent.': 've své konfiguraci pro poskytnutí souhlasu.',
+      'You can review the terms here:': 'Podmínky si můžete prohlédnout zde:',
+      'View AI Supplemental Terms': 'Zobrazit Doplňkové podmínky pro AI'
     },
     direction: 'ltr'
   };
 
-})));
+}));
 //# sourceMappingURL=cs.js.map

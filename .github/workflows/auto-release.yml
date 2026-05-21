@@ -11,45 +11,40 @@ permissions:
   contents: write
 
 jobs:
-  release:
+  check:
     if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
-
+    outputs:
+      release: ${{ steps.check.outputs.release }}
     steps:
-      # --------------------------------------------
-      # Check release intent from PR title/body
-      # --------------------------------------------
-      - name: Check release intent
+      - name: Check merge commit for release intent
         id: check
-        uses: actions/github-script@v6
+        uses: actions/github-script@v7
         with:
-          github-token: ${{ secrets.PAT }}
           script: |
-            const title = context.payload.pull_request.title || '';
-            const body  = context.payload.pull_request.body || '';
-            const text  = `${title} ${body}`;
+            const { data: commit } = await github.rest.git.getCommit({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              commit_sha: context.payload.pull_request.merge_commit_sha
+            });
+            const msg = commit.message || '';
+            const isRelease = /release:\s*yes/i.test(msg);
+            core.info(`Merge commit message:\n${msg}`);
+            core.info(`Release intent: ${isRelease}`);
+            core.setOutput('release', isRelease ? 'true' : 'false');
 
-            core.setOutput(
-              'release',
-              /release:\s*yes/i.test(text) ? 'true' : 'false'
-            );
-
-      - name: Stop if not a release PR
-        if: steps.check.outputs.release == 'false'
-        run: exit 0
-
-      # --------------------------------------------
-      # Checkout merged code (full history)
-      # --------------------------------------------
+  release:
+    needs: check
+    if: needs.check.outputs.release == 'true'
+    runs-on: ubuntu-latest
+    environment: PAT
+    steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.PAT }}
-          fetch-depth: 0
 
-      # --------------------------------------------
-      # Read & validate version from version.rb
-      # --------------------------------------------
+
       - name: Read & validate version
         run: |
           VERSION=$(ruby -e "
@@ -69,29 +64,28 @@ jobs:
           echo "VERSION=$VERSION" >> $GITHUB_ENV
           echo "Resolved version: $VERSION"
 
-      # --------------------------------------------
-      # Setup Ruby
-      # --------------------------------------------
+
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.1'
 
-      # --------------------------------------------
-      # Build gem
-      # --------------------------------------------
+
       - name: Build gem
         run: |
           gem build wysiwyg-rails.gemspec
 
-      # --------------------------------------------
-      # Create GitHub Release (PR body → release body)
-      # --------------------------------------------
+
       - name: Create GitHub Release
         env:
           GITHUB_TOKEN: ${{ secrets.PAT }}
+          RELEASE_NOTES: ${{ github.event.pull_request.body }}
         run: |
-          gh release create "rails-v${VERSION}" \
-            --title "Rails Release v${VERSION}" \
-            --notes "${{ github.event.pull_request.body }}" \
-            *.gem
+          if gh release view "v${VERSION}" >/dev/null 2>&1; then
+            echo "Release v${VERSION} already exists. Skipping."
+            exit 0
+          fi
+          gh release create "v${VERSION}" \
+            --title "Release ${VERSION}" \
+            --notes "$RELEASE_NOTES" \
+            --latest

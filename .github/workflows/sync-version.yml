@@ -59,9 +59,7 @@ jobs:
       # --------------------------------------------
       - name: Update version.rb
         run: |
-          sed -i -E \
-            "s/VERSION\s*=\s*['\"][^'\"]+['\"]/VERSION = '${VERSION}'/" \
-            lib/wysiwyg-rails/version.rb
+          sed -i -E "s/VERSION\s*=\s*['\"][^'\"]+['\"]/VERSION = \"${VERSION}\"/" lib/wysiwyg-rails/version.rb
 
       # --------------------------------------------
       # Sync assets from primary repo
